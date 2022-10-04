@@ -1,15 +1,19 @@
 <template>
-  <LoginPage />
+  <LandingPage />
 </template>
 
 <script>
-import LoginPage from "../components/LoginPage";
+import LandingPage from "../components/LandingPage";
 
 export default {
   name: "HomeView",
 
+  data() {
+    //
+  },
+
   components: {
-    LoginPage,
+    LandingPage,
   },
 };
 </script>

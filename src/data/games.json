@@ -1,0 +1,28 @@
+{
+    "games": [
+        {
+            "gameId": 1,
+            "gameName": "jeu 1",
+            "gameImage": "azeaezae",
+            "userId": 1
+        },
+        {
+            "gameId": 2,
+            "gameName": "jeu 2",
+            "gameImage": "azeaezae",
+            "userId": 1
+        },
+        {
+            "gameId": 3,
+            "gameName": "jeu 3",
+            "gameImage": "azeaezae",
+            "userId": 2
+        },
+        {
+            "gameId": 4,
+            "gameName": "jeu 4",
+            "gameImage": "azeaezae",
+            "userId": 3
+        }
+    ]
+}

@@ -6,11 +6,27 @@
           <v-avatar size="100" color="indigo lighten-4">
             <v-icon size="40" color="indigo">mdi-account</v-icon>
           </v-avatar>
-          <h2 class="indigo--text">Connexion</h2>
+          <h2 class="indigo--text">Inscription</h2>
         </div>
 
         <v-form @submit.prevent="submitHandler" ref="form">
           <v-card-text>
+            <v-text-field
+              v-model="firstName"
+              :rules="nameRules"
+              label="Prénom"
+              placeholder="Prénom"
+              required
+            />
+
+            <v-text-field
+              v-model="lastName"
+              :rules="nameRules"
+              label="Nom"
+              placeholder="Nom"
+              required
+            />
+
             <v-text-field
               v-model="email"
               :rules="emailRules"
@@ -33,11 +49,12 @@
 
           <v-card-actions class="justify-center">
             <v-btn :loading="loading" type="submit" color="indigo">
-              <span class="white--text px-8">Connexion</span>
+              <span class="white--text px-8">Inscription</span>
             </v-btn>
           </v-card-actions>
-
-          <router-link to="/signup">Pas de compte? Inscrivez-vous</router-link>
+          <router-link to="/login"
+            >Vous avez-déjà un compte? Connectez-vous</router-link
+          >
         </v-form>
       </v-col>
     </v-main>
@@ -46,11 +63,15 @@
 
 <script lang="ts">
 export default {
-  name: "LoginPage",
+  name: "SignUpPage",
   props: ["loggedIn"],
 
   data: () => ({
     passwordShow: false,
+    firstName: "",
+    lastName: "",
+
+    nameRules: [(v) => !!v || "Ce champ est requis"],
     email: "",
     emailRules: [
       (v) => !!v || "E-mail is required",
