@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import LandingPage from "../components/LandingPage";
+import LandingPage from "../components/pages/LandingPage";
 
 export default {
   name: "HomeView",

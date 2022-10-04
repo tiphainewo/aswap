@@ -247,13 +247,15 @@
 </template>
 
 <script>
-import games from "../data/games.json";
+import games from "../../data/games.json";
+import users from "../../data/users.json";
 
 export default {
   name: "App",
   data: function () {
     return {
       games: games,
+      users: users,
       title: "Endorfine",
       imageLink: {
         main: "https://firebasestorage.googleapis.com/v0/b/endorfinevue.appspot.com/o/assets%2Fb13f0434-b228-11e6-8e5d-5252025056ab_web_scale_0.4666667_0.4666667__.jpg?alt=media&token=660df23e-599e-434b-9313-ba69c973eeea",

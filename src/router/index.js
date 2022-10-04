@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SignUpPage from '../components/SignUpPage.vue'
-import LoginPage from '../components/LoginPage.vue'
-
+import SignUpPage from '../components/pages/SignUpPage.vue'
+import LoginPage from '../components/pages/LoginPage.vue'
+import ChatPage from '../components/pages/ChatPage.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +23,11 @@ const routes = [
     path: '/home',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    component: ChatPage
   },
   
 
