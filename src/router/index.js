@@ -4,7 +4,7 @@ import SignUpPage from '../components/pages/SignUpPage.vue'
 import LoginPage from '../components/pages/LoginPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
-
+import LandingPage from '../components/pages/ProfilePage.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +29,11 @@ const routes = [
     path: '/chat',
     name: 'chat',
     component: ChatPage
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfilePage
   },
   
 

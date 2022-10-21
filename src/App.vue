@@ -1,12 +1,13 @@
 <template>
   <v-app>
     <v-main>
-      <router-view />
       <ul>
-      <li v-for="game in games" :key="game.id">
-         {{game.name}}
-       </li>
-    </ul>
+        <li v-for="user in users" :key="user.id">
+          {{user.firstName}}
+        </li>
+      </ul>
+      <router-view :users="users" :games="games" @addUser="addUser" />
+
       <BottomNav />
     </v-main>
   </v-app>
@@ -21,6 +22,7 @@ import Game from "./classes/Game"
 
 export default {
   name: "App",
+  emits: ['addUser'],
 
   components: {
     BottomNav,
@@ -54,9 +56,12 @@ export default {
   methods: {
     addGame: function(game) {
       this.games.push(game);
+      console.log(this.games)
     },
+
     addUser: function(user) {
       this.users.push(user);
+      console.log(this.users)
     },
   },
   
