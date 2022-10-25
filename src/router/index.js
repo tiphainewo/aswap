@@ -5,8 +5,7 @@ import SignUpPage from '../components/pages/SignUpPage.vue'
 import LoginPage from '../components/pages/LoginPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import HomeView from '../views/HomeView.vue'
-import NavBar from '../components/pages/NavBar.vue'
-import FooterView from '../components/pages/FooterView.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,25 +21,14 @@ const routes = [
     component: SignUpPage
   },
   {
-    path: '/HomeView',
-    name: 'HomeView',
+    path: '/home',
+    name: 'home',
     component: HomeView
   },
   {
     path: '/chat',
     name: 'chat',
     component: ChatPage
-  },
-  {
-    path: '/Navbar',
-    name: 'NavBar',
-    component: NavBar
-  },
-  
-  {
-    path: '/footer',
-    name: 'FooterView',
-    component: FooterView
   },
   
 
