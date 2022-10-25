@@ -2,7 +2,7 @@
   "name": "projet-jeux",
   "version": "0.1.0",
   "private": true,
-  "postinstall": "yarn run build",
+  "postinstall": "npm run build",
   
   "scripts": {
     "serve": "vue-cli-service serve",
