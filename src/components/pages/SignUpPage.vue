@@ -48,14 +48,13 @@
           </v-card-text>
 
           <v-card-actions class="justify-center">
-            <v-btn type="submit" color="indigo">
+            <v-btn :loading="loading" type="submit" color="indigo">
               <span class="white--text px-8">Inscription</span>
             </v-btn>
           </v-card-actions>
-
           <router-link to="/login"
-            >Vous avez-déjà un compte? Connectez-vous
-          </router-link>
+            >Vous avez-déjà un compte? Connectez-vous</router-link
+          >
         </v-form>
       </v-col>
     </v-main>
@@ -65,8 +64,7 @@
 <script lang="ts">
 export default {
   name: "SignUpPage",
-  props: ["users"],
-
+  props: ["loggedIn"],
 
   data: () => ({
     passwordShow: false,
@@ -76,7 +74,7 @@ export default {
     nameRules: [(v) => !!v || "Ce champ est requis"],
     email: "",
     emailRules: [
-      (v) => !!v || "E-mail is require8Pd",
+      (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
     password: "",
@@ -89,16 +87,7 @@ export default {
   methods: {
     submitHandler() {
       if (this.$refs.form.validate()) {
-        let newUser= {
-            "userId": this.$props.users.length,
-            "firstName": this.firstName,
-            "lastName": this.lastName,
-            "userImage":"",
-            "city": "",
-            "email": this.email,
-            "password": this.password
-        }
-        this.$emit("addUser", newUser)
+        this.$emit("logIn");
         this.$router.push("/home");
       }
     },

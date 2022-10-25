@@ -32,7 +32,7 @@
           </v-card-text>
 
           <v-card-actions class="justify-center">
-            <v-btn type="submit" color="indigo">
+            <v-btn :loading="loading" type="submit" color="indigo">
               <span class="white--text px-8">Connexion</span>
             </v-btn>
           </v-card-actions>
@@ -66,7 +66,8 @@ export default {
   methods: {
     submitHandler() {
       if (this.$refs.form.validate()) {
-        this.$router.push("/home");
+        this.$emit("logIn");
+        this.$router.push("/app");
       }
     },
   },

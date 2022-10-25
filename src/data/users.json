@@ -1,31 +1,25 @@
 {
     "users": [
         {
-            "userId": 0,
+            "userId": 1,
             "firstName": "Jean",
             "lastName": "Dupont",
             "userImage":"aezae",
-            "city": "Lyon",
-            "email": "jean@dupont.fr",
-            "password": "123"
-        },
-        {
-            "userId": 1,
-            "firstName": "Jean2",
-            "lastName": "Dupont",
-            "userImage":"aezae",
-            "city": "Lyon",
-            "email": "jean2@dupont.fr",
-            "password": "123"
+            "city": "Lyon"
         },
         {
             "userId": 2,
+            "firstName": "Jean2",
+            "lastName": "Dupont",
+            "userImage":"aezae",
+            "city": "Lyon"
+        },
+        {
+            "userId": 3,
             "firstName": "Jean3",
             "lastName": "Dupont",
             "userImage":"aezae",
-            "city": "Lyon",
-            "email": "jean3@dupont.fr",
-            "password": "123"
+            "city": "Lyon"
         }
     ]
 }
