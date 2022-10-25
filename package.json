@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "postinstall": "npm run build",
-  
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "node server.js",
