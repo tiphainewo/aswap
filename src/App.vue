@@ -1,5 +1,6 @@
 <template>
   <v-app>
+  
     <v-main>
       <router-view />
       <BottomNav />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+
 import BottomNav from ".//components/BottomNav";
 
 export default {
@@ -15,6 +17,7 @@ export default {
 
   components: {
     BottomNav,
+  
   },
 
   data: () => ({
