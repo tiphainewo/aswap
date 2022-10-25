@@ -67,7 +67,7 @@ export default {
     submitHandler() {
       if (this.$refs.form.validate()) {
         this.$emit("logIn");
-        this.$router.push("/app");
+        this.$router.push("/home");
       }
     },
   },
