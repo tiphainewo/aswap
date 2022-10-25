@@ -4,24 +4,28 @@
             "gameId": 1,
             "gameName": "jeu 1",
             "gameImage": "azeaezae",
+            "price": "2",
             "userId": 1
         },
         {
             "gameId": 2,
             "gameName": "jeu 2",
             "gameImage": "azeaezae",
+            "price": "2",
             "userId": 1
         },
         {
             "gameId": 3,
             "gameName": "jeu 3",
             "gameImage": "azeaezae",
+            "price": "2",
             "userId": 2
         },
         {
             "gameId": 4,
             "gameName": "jeu 4",
             "gameImage": "azeaezae",
+            "price": "2",
             "userId": 3
         }
     ]
