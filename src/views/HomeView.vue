@@ -1,8 +1,8 @@
 <template>
   <v-app>
-<NavBar />
-<v-container fluid>
-  <v-card
+    <NavBar />
+    <v-container fluid>
+      <v-card
         color="#F7F7F7"
         height="180px"
         tile
@@ -65,8 +65,8 @@
           </v-col>
         </v-row>
       </v-card>
-      
-      <v-divider class=mt-2></v-divider>
+
+      <v-divider class="mt-2"></v-divider>
       <v-toolbar color="transparent">
         <v-toolbar-title> jeux de moments</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -76,37 +76,38 @@
         <v-btn variant="text" color="grey">Price</v-btn>
       </v-toolbar>
       <v-row>
-          <v-col cols="12" sm="3" v-for="(game,i) in games" :key="i" >
-              <v-card height="300" align="center" flat outlined tile>
-                <v-img :src="game.image" width="200" height="200" contain></v-img>
-                <v-card-text class="mt-n1">
-                  <strong>{{game.title}}</strong>
-                </v-card-text>
-                <v-card-text class="mt-n4">
-                  <strong>{{game.price}}</strong>
-                </v-card-text>
-              </v-card>
-          </v-col>
+        <v-col cols="12" sm="3" v-for="(game, i) in games" :key="i">
+          <v-card height="300" align="center" flat outlined tile>
+            <v-img :src="game.image" width="200" height="200" contain></v-img>
+            <v-card-text class="mt-n1">
+              <strong>{{ game.title }}</strong>
+            </v-card-text>
+            <v-card-text class="mt-n4">
+              <strong>{{ game.price }}</strong>
+            </v-card-text>
+          </v-card>
+        </v-col>
       </v-row>
       <v-divider></v-divider>
       <v-toolbar color="transparent">
         <v-toolbar-title class="text-caption">Show more games</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-icon color="grey" left class="mr-4 mt-n1">fas fa-long-arrow-alt-left</v-icon>
+        <v-icon color="grey" left class="mr-4 mt-n1"
+          >fas fa-long-arrow-alt-left</v-icon
+        >
         <span class="text-caption">3</span>
-        <v-icon color="grey" left class="ml-4 mt-n1 mr-2">fas fa-long-arrow-alt-right</v-icon>
+        <v-icon color="grey" left class="ml-4 mt-n1 mr-2"
+          >fas fa-long-arrow-alt-right</v-icon
+        >
       </v-toolbar>
-</v-container>
-<FooterView />
+    </v-container>
+    <FooterView />
   </v-app>
-  
 </template>
-
 
 <script>
 import NavBar from "../components/pages/NavBar.vue";
 import FooterView from "../components/pages/FooterView.vue";
-
 
 export default {
   name: "HomeView",
@@ -117,7 +118,7 @@ export default {
 
   components: {
     NavBar,
-    FooterView
+    FooterView,
   },
 };
 </script>
