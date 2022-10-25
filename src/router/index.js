@@ -5,6 +5,8 @@ import LoginPage from '../components/pages/LoginPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
 import ProfilePage from '../components/pages/ProfilePage.vue'
+import MapPage from '../components/pages/MapPage.vue'
+
 
 Vue.use(VueRouter)
 
@@ -35,7 +37,11 @@ const routes = [
     name: 'profile',
     component: ProfilePage
   },
-  
+  {
+    path: '/map',
+    name: 'map',
+    component: MapPage
+  },
 
 ]
 

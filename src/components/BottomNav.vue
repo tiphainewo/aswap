@@ -5,6 +5,11 @@
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
+    <v-btn v-on:click="goTo('map')"
+      ><span>Carte</span>
+      <v-icon>mdi-home</v-icon>
+    </v-btn>
+
     <v-btn v-on:click="goTo('chat')"
       ><span>Discussions</span>
       <v-icon>mdi-forum</v-icon>
