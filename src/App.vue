@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <v-main>
-      <v-app-bar hide-on-scroll color="primary">
-        <img src="logo_colors.png" class=/>
+      <v-app-bar hide-on-scroll color="primary" class="align-start">
+        <div v-on:click="goTo('home')">
+          <img src="logo_colors.png" class="object-contain w-1/2" />
+        </div>
       </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser" />
       <BottomNav />
@@ -66,6 +68,9 @@ export default {
     addUser: function (user) {
       this.users.push(user);
       console.log(this.users);
+    },
+    goTo(page) {
+      this.$router.push(`/${page}`);
     },
   },
 };

@@ -1,21 +1,27 @@
 <template>
-  <v-bottom-navigation color="primary" fixed grow shift>
-    <v-btn v-on:click="goTo('home')"
+  <v-bottom-navigation
+    fixed
+    grow
+    shift
+    color="secondary"
+    background-color="primary"
+  >
+    <v-btn v-on:click="goTo('home')" color="primary" class="!h-full"
       ><span>Catalogue</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="goTo('map')"
+    <v-btn v-on:click="goTo('map')" color="primary" class="!h-full"
       ><span>Carte</span>
       <v-icon>mdi-map</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="goTo('chat')"
+    <v-btn v-on:click="goTo('chat')" color="primary" class="!h-full"
       ><span>Discussions</span>
       <v-icon>mdi-forum</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="goTo('profile')"
+    <v-btn v-on:click="goTo('profile')" color="primary" class="!h-full"
       ><span>Profil</span>
       <v-icon>mdi-account</v-icon>
     </v-btn>
