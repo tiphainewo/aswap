@@ -28,6 +28,11 @@ const routes = [
     component: LandingPage
   },
   {
+    path: '/games',
+    name: 'games',
+    component: LandingPage
+  },
+  {
     path: '/chat',
     name: 'chat',
     component: ChatPage

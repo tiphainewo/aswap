@@ -6,9 +6,9 @@
     color="secondary"
     background-color="primary"
   >
-    <v-btn v-on:click="goTo('home')" color="primary" class="!h-full"
+    <v-btn v-on:click="goTo('games')" color="primary" class="!h-full"
       ><span>Catalogue</span>
-      <v-icon>mdi-home</v-icon>
+      <v-icon>mdi-basket</v-icon>
     </v-btn>
 
     <v-btn v-on:click="goTo('map')" color="primary" class="!h-full"
@@ -17,7 +17,7 @@
     </v-btn>
 
     <v-btn v-on:click="goTo('chat')" color="primary" class="!h-full"
-      ><span>Discussions</span>
+      ><span>Chat</span>
       <v-icon>mdi-forum</v-icon>
     </v-btn>
 
