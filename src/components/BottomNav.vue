@@ -1,22 +1,22 @@
 <template>
-  <v-bottom-navigation class="sticky bottom-0 w-full" fixed>
+  <v-bottom-navigation color="primary" fixed grow shift>
     <v-btn v-on:click="goTo('home')"
-      ><span v-if="currentPage === 'home'">Catalogue</span>
+      ><span>Catalogue</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
     <v-btn v-on:click="goTo('map')"
-      ><span v-if="currentPage === 'map'">Carte</span>
+      ><span>Carte</span>
       <v-icon>mdi-map</v-icon>
     </v-btn>
 
     <v-btn v-on:click="goTo('chat')"
-      ><span v-if="currentPage === 'chat'">Discussions</span>
+      ><span>Discussions</span>
       <v-icon>mdi-forum</v-icon>
     </v-btn>
 
     <v-btn v-on:click="goTo('profile')"
-      ><span v-if="currentPage === 'profile'">Profil</span>
+      ><span>Profil</span>
       <v-icon>mdi-account</v-icon>
     </v-btn>
   </v-bottom-navigation>
