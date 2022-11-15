@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-main>
+      <v-app-bar hide-on-scroll color="primary">
+        <img src="logo_colors.png" class=/>
+      </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser" />
       <BottomNav />
     </v-main>
