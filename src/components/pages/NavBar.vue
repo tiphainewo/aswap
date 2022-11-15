@@ -3,7 +3,7 @@
     <v-btn>
         <v-icon left class="mr-2">fas fa-bars</v-icon>
     </v-btn>
-    <v-toolbar-title> Notre Boutique</v-toolbar-title>
+    <v-toolbar-title> Catalogue</v-toolbar-title>
     <div style="position: absolute;margin-left:auto;margin-right:auto;left:0;right:0;text-align: center;">
     <h4>.Games </h4>
     </div>

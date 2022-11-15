@@ -90,7 +90,7 @@
           </v-col>
       </v-row>
       <v-divider></v-divider>
-      <v-toolbar color="transparent">
+      <v-toolbar color="white">
         <v-toolbar-title class="text-caption">Show more games</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-icon color="grey" left class="mr-4 mt-n1">fas fa-long-arrow-alt-left</v-icon>
@@ -118,7 +118,7 @@ setup(){
     other: false,
     slider2: 50,
     categories: [
-    { img: "../../assets/photos/jeuS.png", title: "Jeux de Societé " },
+    { img: "jeuSos.png", title: "Jeux de Societé " },
         { img: "puzzle.jpg", title: "puzzle" },
         { img: "joker.png", title: "jeux de carte" },
         { img: "class.jpg", title: "jeux de stratégie " },
