@@ -79,6 +79,7 @@
           <v-col cols="12" sm="3" v-for="(game,i) in games" :key="i" >
               <v-card height="300" align="center" flat outlined tile>
                 <v-img :src="game.image" width="200" height="200" contain></v-img>
+                {{game.image}}
                 <v-card-text class="mt-n1">
                   <strong>{{game.title}}</strong>
                 </v-card-text>
