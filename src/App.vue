@@ -1,17 +1,26 @@
 <template>
-  <div id="app">
-    <Navbar/>
-    <router-view/>
-    <FooterComp/>
-  </div>
+  <v-app>
+    <v-main>
+      <v-app-bar hide-on-scroll color="primary" class="align-start">
+        <div v-on:click="goTo('home')">
+          <img src="logo_colors.png" class="object-contain w-1/2" />
+        </div>
+      </v-app-bar>
+      <router-view :users="users" :games="games" @addUser="addUser" :test="'coucou'"/>
+      <FooterComp/>
+      <BottomNav />
+    </v-main>
+  </v-app>
 </template>
 <script>
 import Navbar from  '@/components/Navbar.vue'
 import FooterComp from  '@/components/FooterComp.vue'
+import BottomNav from './components/BottomNav.vue';
 export default{
   components:{
     Navbar,
-    FooterComp
+    FooterComp,
+    BottomNav
   }
 
 }
