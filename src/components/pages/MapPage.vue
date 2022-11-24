@@ -7,31 +7,37 @@
     :center="center"
     :zoom="zoom"
   >
-  <MglNavigationControl position="top-right"/>
+    <MglNavigationControl position="top-right"/>
     <MglGeolocateControl position="top-right" />
-    <MglMarker :coordinates="coordinates" color="blue" >
+    <MglMarker :coordinates="coordinates" color="blue" v-on:click="openProfile()">
       <!-- <v-icon slot="marker">mdi-map-marker</v-icon> -->
-      <MglPopup>
-        <VCard>
-          <div>Hello, I'm popup!</div>
-        </VCard>
-      </MglPopup>
+
+      <v-badge
+        slot="marker"
+        bordered
+        overlap
+        content="6"
+        color="secondary"
+      >
+        <v-avatar size="50" bordered color="white" class="border-2">
+          <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+        </v-avatar>
+      </v-badge>
     </MglMarker>
-    </MglMap>
+  </MglMap>
 
 </template>
 
 <script>
 import Mapbox from "mapbox-gl";
-import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker, MglPopup } from "vue-mapbox";
+import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker} from "vue-mapbox";
 
 export default {
   components: {
     MglMap,
     MglNavigationControl,
     MglGeolocateControl,
-    MglMarker,
-    MglPopup
+    MglMarker
   },
   data() {
     return {
@@ -43,19 +49,26 @@ export default {
     };
   },
 
+  props: ["users"],
+
   created() {
     // We need to set mapbox-gl library here in order to use it in template
     this.mapbox = Mapbox;
+    
   },
 
   methods: {
-    onMapLoaded(event) {
-      // in component
-      this.map = event.map;
-      // or just to store if you want have access from other components
-      this.$store.map = event.map;
+    onMapLoaded({map}) {
+      this.map = map;
+    },
+
+    openProfile(){
+      console.log(this.props)
+
     }
   }
 };
+
+
 </script>
 
