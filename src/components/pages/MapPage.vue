@@ -10,8 +10,6 @@
     <MglNavigationControl position="top-right"/>
     <MglGeolocateControl position="top-right" />
     <MglMarker :coordinates="coordinates" color="blue" v-on:click="openProfile()">
-      <!-- <v-icon slot="marker">mdi-map-marker</v-icon> -->
-
       <v-badge
         slot="marker"
         bordered
@@ -39,6 +37,10 @@ export default {
     MglGeolocateControl,
     MglMarker
   },
+
+  props: ["users", "test"],
+
+
   data() {
     return {
       accessToken: "pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg",
@@ -46,15 +48,14 @@ export default {
       coordinates: [4.829539, 45.740351],
       center: [4.835659, 45.748043],
       zoom: 13,
+      usersArray: this.users
     };
   },
 
-  props: ["users"],
 
   created() {
     // We need to set mapbox-gl library here in order to use it in template
     this.mapbox = Mapbox;
-    
   },
 
   methods: {
@@ -63,7 +64,7 @@ export default {
     },
 
     openProfile(){
-      console.log(this.props)
+      console.log(this.usersArray)
 
     }
   }

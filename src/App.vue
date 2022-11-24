@@ -6,7 +6,7 @@
           <img src="logo_colors.png" class="object-contain w-1/2" />
         </div>
       </v-app-bar>
-      <router-view :users="users" :games="games" @addUser="addUser" />
+      <router-view :users="users" :games="games" @addUser="addUser" :test="'coucou'"/>
       <BottomNav />
     </v-main>
   </v-app>
