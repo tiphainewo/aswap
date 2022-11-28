@@ -1,25 +1,23 @@
 <template>
 
-  <MglMap
-    :accessToken="accessToken"
-    :mapStyle.sync="mapStyle"
-    @load="onMapLoaded"
-    :center="center"
-    :zoom="zoom"
-  >
-    <MglNavigationControl position="top-right"/>
+  <MglMap :accessToken="accessToken" :mapStyle.sync="mapStyle" @load="onMapLoaded" :center="center" :zoom="zoom">
+    <MglNavigationControl position="top-right" />
     <MglGeolocateControl position="top-right" />
-    <MglMarker :coordinates="coordinates" color="blue" v-on:click="openProfile()">
-      <v-badge
-        slot="marker"
-        bordered
-        overlap
-        content="6"
-        color="secondary"
-      >
-        <v-avatar size="50" bordered color="white" class="border-2">
-          <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
+
+    <MglMarker :coordinates="user.coordinates" color="blue" v-on:click="openProfile(user.id)" v-for="user of users"
+      v-bind:key="user.id">
+      <v-badge slot="marker" bordered overlap content="6" color="secondary">
+
+        <v-avatar size="50" bordered color="white" class="border-2" v-if="user.userImage">
+          <v-img :src="user.userImage"></v-img>
         </v-avatar>
+
+        <v-avatar color="secondary" v-else>
+          <v-icon dark>
+            mdi-account-circle
+          </v-icon>
+        </v-avatar>
+
       </v-badge>
     </MglMarker>
   </MglMap>
@@ -28,7 +26,7 @@
 
 <script>
 import Mapbox from "mapbox-gl";
-import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker} from "vue-mapbox";
+import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker } from "vue-mapbox";
 
 export default {
   components: {
@@ -59,13 +57,12 @@ export default {
   },
 
   methods: {
-    onMapLoaded({map}) {
+    onMapLoaded({ map }) {
       this.map = map;
     },
 
-    openProfile(){
-      console.log(this.usersArray)
-
+    openProfile(id) {
+      this.$router.push(`/user/${id}`);
     }
   }
 };
