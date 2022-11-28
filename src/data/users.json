@@ -1,28 +1,28 @@
 {
     "users": [
         {
-            "userId": 1,
+            "id": 1,
             "firstName": "Lucie",
             "lastName": "Martin",
             "userImage":"https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
             "city": "Lyon",
-            "coordinates":"[4.829539, 45.740351]"
+            "coordinates":[4.829539, 45.740351]
         },
         {
-            "userId": 2,
+            "id": 2,
             "firstName": "Léo",
             "lastName": "Dupont",
             "userImage":"https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
             "city": "Lyon",
-            "coordinates":"[4.838681, 45.748648]"
+            "coordinates":[4.838681, 45.748648]
         },
         {
-            "userId": 3,
+            "id": 3,
             "firstName": "Jean3",
             "lastName": "Dupont",
-            "userImage":"aezae",
+            "userImage":"",
             "city": "Lyon",
-            "coordinates":"[4.829281, 45.751372]"
+            "coordinates":[4.829281, 45.751372]
         }
     ]
 }

@@ -16,14 +16,65 @@
 import Navbar from  '@/components/Navbar.vue'
 import FooterComp from  '@/components/FooterComp.vue'
 import BottomNav from './components/BottomNav.vue';
-export default{
-  components:{
+
+export default {
+  name: "App",
+  emits: ["addUser"],
+
+  components: {
+    BottomNav,
     Navbar,
     FooterComp,
-    BottomNav
-  }
+  },
 
-}
+  data: function () {
+    return {};
+  },
+
+  computed: {
+    users() {
+      let usersArray = [];
+      for (let user of usersJSON.users) {
+        usersArray.push(
+          new User(
+            user.id,
+            user.firstName,
+            user.lastName,
+            user.userImage,
+            user.city,
+            user.coordinates
+          )
+        );
+      }
+      return usersArray;
+    },
+
+    games() {
+      let gamesArray = [];
+      for (let game of gamesJSON.games) {
+        gamesArray.push(
+          new Game(game.gameId, game.gameName, game.gameImage, game.userId)
+        );
+      }
+      return gamesArray;
+    },
+  },
+
+  methods: {
+    addGame: function (game) {
+      this.games.push(game);
+      console.log(this.games);
+    },
+
+    addUser: function (user) {
+      this.users.push(user);
+      console.log(this.users);
+    },
+    goTo(page) {
+      this.$router.push(`/${page}`);
+    },
+  },
+};
 </script>
 <style lang="scss">
 body {
