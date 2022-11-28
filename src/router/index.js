@@ -6,7 +6,7 @@ import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
 import ProfilePage from '../components/pages/ProfilePage.vue'
 import MapPage from '../components/pages/MapPage.vue'
-
+import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +42,11 @@ const routes = [
     name: 'map',
     component: MapPage
   },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: UserDetailsPage
+  }
 
 ]
 

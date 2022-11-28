@@ -1,6 +1,6 @@
 export default class User {
 
-    userId = null;
+    id = null;
     firstName = null;
     lastName = null;
     userImage = null;
@@ -9,7 +9,7 @@ export default class User {
  
     constructor(id, fname, lname, image, city, coordinates) 
     {
-      this.userId = id;
+      this.id = id;
       this.firstName = fname;
       this.lastName = lname;
       this.userImage = image;

@@ -40,8 +40,9 @@ export default {
             user.id,
             user.firstName,
             user.lastName,
-            user.image,
-            user.city
+            user.userImage,
+            user.city,
+            user.coordinates
           )
         );
       }
