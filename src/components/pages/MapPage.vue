@@ -36,7 +36,7 @@ export default {
     MglMarker
   },
 
-  props: ["users", "test"],
+  props: ["users"],
 
 
   data() {
