@@ -6,9 +6,9 @@
         
             <p>{{game.name}}</p>
             <div class="flex gap-1 items-start">
-                <v-chip x-small>Jeu de plateau</v-chip>
-                <v-chip x-small>2-5 joueurs</v-chip>
-                <v-chip x-small>6+ ans</v-chip>
+                <v-chip small color="secondary">Jeu de plateau</v-chip>
+                <v-chip small color="secondary">2-5 joueurs</v-chip>
+                <v-chip small color="secondary">6+ ans</v-chip>
             </div>
 
         </div>

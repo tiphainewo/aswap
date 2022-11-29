@@ -18,11 +18,11 @@
         },
         {
             "id": 3,
-            "firstName": "Jean3",
-            "lastName": "Dupont",
-            "userImage":"",
+            "firstName": "Jean",
+            "lastName": "M.",
+            "userImage":"https://cdn.vuetifyjs.com/images/lists/2.jpg",
             "city": "Lyon",
-            "coordinates":[4.829281, 45.751372]
+            "coordinates":[4.829539, 45.748648]
         }
     ]
 }
