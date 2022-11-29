@@ -17,32 +17,50 @@
         <div class="flex flex-col items-stretch w-screen">
             <p>Jeux</p>
             <div class="grid grid-cols-2 gap-2">
-                <div v-for="game of games" v-bind:key="game.id"  v-on:click="overlay = !overlay">
+                <div v-for="game of games" v-bind:key="game.id"  v-on:click="openGame(game)">
                     <GameCard :game="game">
                     </GameCard>
                 </div>
                 
             </div>
         </div>
-        <v-overlay :value="overlay" v-on:click="overlay = false"></v-overlay>
+        <v-overlay :value="overlay" v-on:click="closeGame()" :opacity="0.2">
+            <div class="w-screen rounded-t-3xl bg-white h-[70%] fixed bottom-0 left-0 p-5 text-black">
+                <GameCardExpanded :game="selectedGame"></GameCardExpanded>
+            </div>
+        </v-overlay>    
     </v-main>
+    
 </template>
 
 <script lang="ts">
 import GameCard from '../GameCard.vue';
+import GameCardExpanded from '../GameCardExpanded.vue';
+
 
 
 export default { 
-    components: { GameCard },
+    components: { GameCard, GameCardExpanded },
 
     props: ["users", "games"],
+
+    methods: {
+        openGame(game) {
+            this.overlay = !this.overlay;
+            this.selectedGame = game;
+        },
+        closeGame(){
+            this.overlay = false;
+            this.selectedGame={};
+        }
+    },
 
     data() {
         return {
             usersArray: this.users,
             id: this.$route.params.id,
             overlay: false,
-
+            selectedGame: {},
         };
     },
     computed: {
@@ -51,9 +69,7 @@ export default {
         }
     },
     
-    methods: {
 
-    }
 
  
 
