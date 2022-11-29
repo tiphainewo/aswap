@@ -15,7 +15,7 @@
         </div>
 
         <div class="flex flex-col items-stretch w-screen">
-            <p>Jeux</p>
+            <p class="font-bold text-xl text-primary">Jeux</p>
             <div class="grid grid-cols-2 gap-2">
                 <div v-for="game of games" v-bind:key="game.id"  v-on:click="openGame(game)">
                     <GameCard :game="game">
