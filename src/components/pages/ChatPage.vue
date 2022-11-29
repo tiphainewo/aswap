@@ -1,14 +1,5 @@
 <template>
-  <v-card width="full" class="mx-auto">
-    <v-toolbar color="cyan" dark>
-      <v-toolbar-title>Messages</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-toolbar>
+  <div>
 
     <v-list three-line>
       <template v-for="(item, index) in items">
@@ -36,7 +27,7 @@
         </v-list-item>
       </template>
     </v-list>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -45,20 +36,20 @@ export default {
     items: [
       { header: "Aujourd'hui" },
       {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-        title: "Brunch this weekend?",
-        subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+        avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+        title: "Léo Dupont",
+        subtitle: `Bonjour, je serais intéressé par votre Mono...`,
       },
       { divider: true, inset: true },
       {
         avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-        subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+        title: 'Jean M.',
+        subtitle: `Oui bien sûr! Par contre je ne serai pas e...`,
       },
       { header: "18 novembre" },
       {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-        title: "Oui oui",
+        avatar: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+        title: "Lucie Martin",
         subtitle:
           '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
       },
