@@ -7,13 +7,15 @@
         </div>
       </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser"/>
+      <FooterComp/>
       <BottomNav />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import BottomNav from ".//components/BottomNav";
+import FooterComp from  '@/components/FooterComp.vue'
+import BottomNav from './components/BottomNav.vue';
 import usersJSON from "./data/users.json";
 import User from "./classes/User";
 import gamesJSON from "./data/games.json";
@@ -22,15 +24,13 @@ import Game from "./classes/Game";
 export default {
   name: "App",
   emits: ["addUser"],
-
   components: {
     BottomNav,
+    FooterComp,
   },
-
   data: function () {
     return {};
   },
-
   computed: {
     users() {
       let usersArray = [];
@@ -48,7 +48,6 @@ export default {
       }
       return usersArray;
     },
-
     games() {
       let gamesArray = [];
       for (let game of gamesJSON.games) {
@@ -59,13 +58,11 @@ export default {
       return gamesArray;
     },
   },
-
   methods: {
     addGame: function (game) {
       this.games.push(game);
       console.log(this.games);
     },
-
     addUser: function (user) {
       this.users.push(user);
       console.log(this.users);
@@ -76,3 +73,17 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: #D6E4E5;
+}
+*,*::before,*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+</style>
