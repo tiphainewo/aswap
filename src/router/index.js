@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 // import SignUpPage from '../components/pages/SignUpPage.vue'
 // import LoginPage from '../components/pages/LoginPage.vue'
+import InboxPage from '../components/pages/InboxPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
 import ProfilePage from '../components/pages/ProfilePage.vue'
@@ -18,14 +19,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/games',
-    name: 'games',
-    component: LandingPage
-  },
-  {
-    path: '/chat',
+    path: '/chat/:id',
     name: 'chat',
     component: ChatPage
+  },
+  {
+    path: '/inbox',
+    name: 'inbox',
+    component: InboxPage
   },
   {
     path: '/profile',
