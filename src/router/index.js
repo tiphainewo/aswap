@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import SignUpPage from '../components/pages/SignUpPage.vue'
-import LoginPage from '../components/pages/LoginPage.vue'
+import HomeView from '../views/HomeView.vue'
+import ShowUser from '../views/ShowUser.vue'
+// import SignUpPage from '../components/pages/SignUpPage.vue'
+// import LoginPage from '../components/pages/LoginPage.vue'
 import InboxPage from '../components/pages/InboxPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
-import ProfilePage from '../components/pages/ProfilePage.vue'
+// import ProfilePage from '../components/pages/ProfilePage.vue'
 import MapPage from '../components/pages/MapPage.vue'
 import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
 
@@ -13,18 +15,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/games',
+    name: 'games',
+    component: HomeView
+  },
+  {
     path: '/',
-    alias: '/login',
-    name: 'login',
-    component: LoginPage
-  },
-  {
-    path: '/signup',
-    name: 'signup',
-    component: SignUpPage
-  },
-  {
-    path: '/home',
     name: 'home',
     component: LandingPage
   },
@@ -41,7 +37,7 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-    component: ProfilePage
+    component: ShowUser
   },
   {
     path: '/map',
@@ -57,6 +53,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
