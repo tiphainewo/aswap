@@ -16,6 +16,10 @@
 import Navbar from  '@/components/Navbar.vue'
 import FooterComp from  '@/components/FooterComp.vue'
 import BottomNav from './components/BottomNav.vue';
+import usersJSON from "./data/users.json";
+import User from "./classes/User";
+import gamesJSON from "./data/games.json";
+import Game from "./classes/Game";
 
 export default {
   name: "App",
