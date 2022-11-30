@@ -174,7 +174,7 @@ export default new Vuex.Store({
     setSelectedGame:(state, val)=>{
       state.selectedGame = val
     },
-    setSortBy:(state,val)=>{
+    setSortBy(state,val){
       state.sortBy = val
       if(val===''){
         state.matchedGames = state.games
