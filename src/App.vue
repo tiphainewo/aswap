@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <v-btn>coucou</v-btn>
     <Navbar/>
     <router-view/>
     <FooterComp/>
