@@ -7,14 +7,13 @@
         </div>
       </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser"/>
-      <FooterComp/>
       <BottomNav />
     </v-main>
   </v-app>
 </template>
+
 <script>
-import FooterComp from  '@/components/FooterComp.vue'
-import BottomNav from './components/BottomNav.vue';
+import BottomNav from ".//components/BottomNav";
 import usersJSON from "./data/users.json";
 import User from "./classes/User";
 import gamesJSON from "./data/games.json";
@@ -26,7 +25,6 @@ export default {
 
   components: {
     BottomNav,
-    FooterComp,
   },
 
   data: function () {
@@ -78,17 +76,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background-color: #D6E4E5;
-}
-*,*::before,*::after{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-</style>
