@@ -161,20 +161,20 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setSearchKey:(state, val)=>{
+    setSearchKey(state, val){
       state.searchByName = val
       state.matchedGames = state.games.filter((el)=>{
         return el.title.toLowerCase().includes(state.searchByName)
       })
     },
-    setMatchedGames:(state, val)=>{
+    setMatchedGames(state, val){
       state.matchedGames = []
       state.matchedGames.push(val)
     },
-    setSelectedGame:(state, val)=>{
+    setSelectedGame(state, val){
       state.selectedGame = val
     },
-    setSortBy:(state, val)=>{
+    setSortBy(state, val){
       state.sortBy = val
       if(val===''){
         state.matchedGames = state.games
