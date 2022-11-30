@@ -13,7 +13,6 @@
   </v-app>
 </template>
 <script>
-import Navbar from  '@/components/Navbar.vue'
 import FooterComp from  '@/components/FooterComp.vue'
 import BottomNav from './components/BottomNav.vue';
 import usersJSON from "./data/users.json";
@@ -27,7 +26,6 @@ export default {
 
   components: {
     BottomNav,
-    Navbar,
     FooterComp,
   },
 

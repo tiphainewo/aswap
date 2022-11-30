@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ShowUser from '../views/ShowUser.vue'
 // import SignUpPage from '../components/pages/SignUpPage.vue'
 // import LoginPage from '../components/pages/LoginPage.vue'
 import InboxPage from '../components/pages/InboxPage.vue'
@@ -8,14 +9,15 @@ import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
 import ProfilePage from '../components/pages/ProfilePage.vue'
 import MapPage from '../components/pages/MapPage.vue'
-import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
+// import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: '/games',
+    name: 'games',
     component: HomeView
   },
   {
@@ -41,8 +43,13 @@ const routes = [
   {
     path: '/user/:id',
     name: 'user',
-    component: UserDetailsPage
-  }
+    component: ShowUser
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: LandingPage
+  },
 
 ]
 
