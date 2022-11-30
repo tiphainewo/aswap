@@ -16,7 +16,7 @@
       <v-icon>mdi-map</v-icon>
     </v-btn>
 
-    <v-btn v-on:click="goTo('chat')" color="primary" class="!h-full"
+    <v-btn v-on:click="goTo('inbox')" color="primary" class="!h-full"
       ><span>Discussions</span>
       <v-icon>mdi-forum</v-icon>
     </v-btn>
