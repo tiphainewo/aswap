@@ -1,59 +1,43 @@
 <template>
-  <div>
+    <v-main class="flex flex-col items-center mt-5 mx-5 gap-10" v-if="user">
+        <div class="flex flex-row items-center border-1">
+            <v-avatar size="80" bordered color="white" class="border-2" v-if="user.userImage">
+                <v-img :src="user.userImage"></v-img>
+            </v-avatar>
 
-    <v-list three-line>
-      <template v-for="(item, index) in items">
-        <v-subheader
-          v-if="item.header"
-          :key="item.header"
-          v-text="item.header"
-        ></v-subheader>
-
-        <v-divider
-          v-else-if="item.divider"
-          :key="index"
-          :inset="item.inset"
-        ></v-divider>
-
-        <v-list-item v-else :key="item.title">
-          <v-list-item-avatar>
-            <v-img :src="item.avatar"></v-img>
-          </v-list-item-avatar>
-
-          <v-list-item-content>
-            <v-list-item-title v-html="item.title"></v-list-item-title>
-            <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </template>
-    </v-list>
-  </div>
+            <v-avatar color="secondary" v-else>
+                <v-icon dark>
+                    mdi-account-circle
+                </v-icon>
+            </v-avatar>
+            <p>{{ user.firstName + ' ' + user.lastName }}</p>
+        </div>
+    </v-main>
+    
 </template>
 
-<script>
-export default {
-  data: () => ({
-    items: [
-      { header: "Aujourd'hui" },
-      {
-        avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-        title: "Léo Dupont",
-        subtitle: `Bonjour, je serais intéressé par votre Mono...`,
-      },
-      { divider: true, inset: true },
-      {
-        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        title: 'Jean M.',
-        subtitle: `Oui bien sûr! Par contre je ne serai pas e...`,
-      },
-      { header: "18 novembre" },
-      {
-        avatar: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-        title: "Lucie Martin",
-        subtitle:
-          '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-      },
-    ],
-  }),
-};
+<script lang="ts">
+
+export default { 
+    props: ["users"],
+
+    methods: {
+
+    },
+
+    data() {
+        return {
+            usersArray: this.users,
+            id: this.$route.params.id,
+        };
+    },
+    computed: {
+        user() {
+            return this.usersArray.find(user => user.id == this.id);
+        }
+    },
+}
+
 </script>
+
+  
