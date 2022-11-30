@@ -16,6 +16,7 @@
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
     "vuex": "^3.6.2",
+    "windicss": "^3.5.6",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
