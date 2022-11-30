@@ -1,48 +1,72 @@
 <template>
-  <div id="mapContainer" class="basemap"></div>
+
+  <MglMap :accessToken="accessToken" :mapStyle.sync="mapStyle" @load="onMapLoaded" :center="center" :zoom="zoom">
+    <MglNavigationControl position="top-right" />
+    <MglGeolocateControl position="top-right" />
+
+    <MglMarker :coordinates="user.coordinates" color="blue" v-on:click="openProfile(user.id)" v-for="user of users"
+      v-bind:key="user.id">
+      <v-badge slot="marker" bordered overlap content="6" color="secondary">
+
+        <v-avatar size="50" bordered color="white" class="border-2" v-if="user.userImage">
+          <v-img :src="user.userImage"></v-img>
+        </v-avatar>
+
+        <v-avatar color="secondary" v-else>
+          <v-icon dark>
+            mdi-account-circle
+          </v-icon>
+        </v-avatar>
+
+      </v-badge>
+    </MglMarker>
+  </MglMap>
+
 </template>
 
 <script>
-import mapboxgl from "mapbox-gl";
+import Mapbox from "mapbox-gl";
+import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker } from "vue-mapbox";
 
 export default {
-  name: "BaseMap",
+  components: {
+    MglMap,
+    MglNavigationControl,
+    MglGeolocateControl,
+    MglMarker
+  },
+
+  props: ["users"],
+
+
   data() {
     return {
-      accessToken:
-        "pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg",
+      accessToken: "pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg",
+      mapStyle: "mapbox://styles/mapbox/streets-v10",
+      coordinates: [4.829539, 45.740351],
+      center: [4.835659, 45.748043],
+      zoom: 13,
+      usersArray: this.users
     };
   },
-  mounted() {
-    mapboxgl.accessToken = this.accessToken;
 
-    let map = new mapboxgl.Map({
-      container: "mapContainer",
-      style: "mapbox://styles/mapbox/streets-v10",
-      center: [4.835659, 45.764043],
-      zoom: 15,
-    });
 
-    const nav = new mapboxgl.NavigationControl();
-    map.addControl(nav, "top-right");
-
-    new mapboxgl.Marker().setLngLat([4.872709, 45.740853]).addTo(map);
-
-    const geolocate = new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true,
-      },
-      trackUserLocation: true,
-    });
-
-    map.addControl(geolocate, "top-right");
+  created() {
+    // We need to set mapbox-gl library here in order to use it in template
+    this.mapbox = Mapbox;
   },
+
+  methods: {
+    onMapLoaded({ map }) {
+      this.map = map;
+    },
+
+    openProfile(id) {
+      this.$router.push(`/user/${id}`);
+    }
+  }
 };
+
+
 </script>
 
-<style lang="scss" scoped>
-.basemap {
-  width: 100%;
-  height: 100%;
-}
-</style>
