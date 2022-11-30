@@ -1,12 +1,15 @@
 {
-  "name": "gamestore",
+  "name": "projet-jeux",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "node server.js",
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
+    "chalk": "^5.1.2",
     "core-js": "^3.8.3",
     "express": "^4.18.2",
     "mapbox-gl": "^0.53.1",
@@ -19,9 +22,11 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
