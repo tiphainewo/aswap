@@ -1,107 +1,161 @@
 <template>
-  <v-app>
-    <NavBar />
-    <v-container fluid>
-      <v-card
-        color="#F7F7F7"
-        height="180px"
-        tile
-        flat
-        class="d-flex align-center justify-center mt-12"
-        dark
-      >
-        <v-row>
-          <v-col cols="12" sm="12">
-            <v-item-group mandatory class="mt-n1">
-              <v-container>
-                <v-row justify="center" class="space">
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    sm="4"
-                    md="2"
-                    v-for="(cetegory, i) in categories"
-                    :key="i"
-                  >
-                    <v-item v-slot="{ active, toggle }">
-                      <v-card
-                        :color="active ? '#D5F0DB' : 'white'"
-                        :class="active ? 'borderme' : 'borderout'"
-                        class="d-flex align-center rounded-lg mx-2"
-                        dark
-                        height="170"
-                        @click="toggle"
-                        flat
-                      >
-                        <v-row>
-                          <v-col cols="12" sm="12">
-                            <v-list-item three-line class="text-center">
-                              <v-list-item-content>
-                                <div align="center" justify="center">
-                                  <v-img
-                                    :src="cetegory.img"
-                                    max-height="80"
-                                    max-width="80"
-                                    contain
-                                  ></v-img>
-                                </div>
-                                <v-list-item-subtitle
-                                  :class="
-                                    active ? 'green--text' : 'black--text'
-                                  "
-                                  class="caption mt-4"
-                                  >{{ cetegory.title }}</v-list-item-subtitle
-                                >
-                              </v-list-item-content>
-                            </v-list-item>
-                          </v-col>
-                        </v-row>
-                      </v-card>
-                    </v-item>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-item-group>
-          </v-col>
-        </v-row>
-      </v-card>
+  <v-app light>
+    <v-content>
+      <section>
+        <v-parallax :src="imageLink.sub_main" height="600">
+          <v-layout column align-center justify-center class="white--text">
+            <h1>Titre</h1>
+          </v-layout>
+        </v-parallax>
+      </section>
 
-      <v-divider class="mt-2"></v-divider>
-      <v-toolbar color="transparent">
-        <v-toolbar-title> jeux de moments</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn variant="text" color="grey">Sort by :</v-btn>
-        <v-btn variant="text" color="">Name</v-btn>
-        <v-btn variant="text" color="grey">Popularity</v-btn>
-        <v-btn variant="text" color="grey">Price</v-btn>
-      </v-toolbar>
-      <v-row>
-        <v-col cols="12" sm="3" v-for="(game, i) in games" :key="i">
-          <v-card height="300" align="center" flat outlined tile>
-            <v-img :src="game.image" width="200" height="200" contain></v-img>
-            <v-card-text class="mt-n1">
-              <strong>{{ game.title }}</strong>
-            </v-card-text>
-            <v-card-text class="mt-n4">
-              <strong>{{ game.price }}</strong>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-divider></v-divider>
-      <v-toolbar color="transparent">
-        <v-toolbar-title class="text-caption">Show more games</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-icon color="grey" left class="mr-4 mt-n1"
-          >fas fa-long-arrow-alt-left</v-icon
-        >
-        <span class="text-caption">3</span>
-        <v-icon color="grey" left class="ml-4 mt-n1 mr-2"
-          >fas fa-long-arrow-alt-right</v-icon
-        >
-      </v-toolbar>
-    </v-container>
-    <FooterView />
+      <section>
+        <v-layout column wrap class="my-5" align-center>
+          <v-flex xs12 sm4 class="my-3">
+            <div class="text-xs-center">
+              <h2 class="headline">Titre</h2>
+              <span class="subheading">
+                Sous titre
+              </span>
+            </div>
+          </v-flex>
+          <v-flex xs12>
+            <v-container grid-list-xl>
+              <v-layout row wrap align-center>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >icone</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-xs-center">Titre</div>
+                    </v-card-title>
+                    <v-card-text>
+                      texte
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >icon</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">titre</div>
+                    </v-card-title>
+                    <v-card-text>
+                     texte
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >icone</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-xs-center">
+                        titre
+                      </div>
+                    </v-card-title>
+                    <v-card-text>
+                      texte
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
+      </section>
+
+      <section>
+        <v-parallax :src="imageLink.main" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-3 text-xs-center">
+              texte
+            </div>
+           
+            <v-btn
+              class="blue lighten-2 mt-5"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              Get more info
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section>
+        <v-container grid-list-md>
+          <v-layout row wrap>
+            <v-flex xs12 text-xs-center class="mt-5">
+              <div class="headline">headline</div>
+              <br />
+              <div>
+                texte
+              </div>
+            </v-flex>
+            
+          </v-layout>
+        </v-container>
+      </section>
+
+      <section>
+        <v-parallax :src="imageLink.social_cover" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-3 text-xs-center">
+              texte
+            </div>
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center class="my-5">
+            <v-flex xs12 sm4>
+              <v-card class="elevation-0 transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Titre</div>
+                </v-card-title>
+                <v-card-text>
+                  Texte
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm4 offset-sm1>
+              <v-card class="elevation-0 transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Titre</div>
+                </v-card-title>
+                <v-card-text>
+                  Texte
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <section>
+        <v-container>
+          <v-layout>
+            <v-flex xs12 class="text-xs-center">
+              <img height="200px" :src="imageLink.logo" />
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+    </v-content>
   </v-app>
 </template>
 
@@ -135,6 +189,7 @@ export default {
   computed: {
     imgHeight: function () {
       var offset = 320;
+      console.log("new image height is " + (this.pageHeight - offset));
       return this.pageHeight - offset;
     },
   },

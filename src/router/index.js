@@ -7,9 +7,9 @@ import ShowUser from '../views/ShowUser.vue'
 import InboxPage from '../components/pages/InboxPage.vue'
 import ChatPage from '../components/pages/ChatPage.vue'
 import LandingPage from '../components/pages/LandingPage.vue'
-import ProfilePage from '../components/pages/ProfilePage.vue'
+// import ProfilePage from '../components/pages/ProfilePage.vue'
 import MapPage from '../components/pages/MapPage.vue'
-// import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
+import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
 
 Vue.use(VueRouter)
 
@@ -18,6 +18,11 @@ const routes = [
     path: '/games',
     name: 'games',
     component: HomeView
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: LandingPage
   },
   {
     path: '/chat/:id',
@@ -32,7 +37,7 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-    component: ProfilePage
+    component: ShowUser
   },
   {
     path: '/map',
@@ -42,12 +47,7 @@ const routes = [
   {
     path: '/user/:id',
     name: 'user',
-    component: ShowUser
-  },
-  {
-    path: '/',
-    name: 'home',
-    component: LandingPage
+    component: UserDetailsPage
   }
 
 ]
