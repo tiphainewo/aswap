@@ -1,5 +1,13 @@
 <template>
     <v-main class="flex flex-col items-center mt-5 mx-5 gap-10" v-if="user">
+        <v-btn
+              icon
+              color="secondary"
+              class="absolute left-0 top-0"
+              v-on:click="$router.go(-1)"
+            >
+              <v-icon>mdi-arrow-left</v-icon>
+            </v-btn>
         <div class="flex flex-col items-center">
             <v-avatar size="80" bordered color="white" class="border-2" v-if="user.userImage">
                 <v-img :src="user.userImage"></v-img>
@@ -11,7 +19,7 @@
                 </v-icon>
             </v-avatar>
             <p>{{ user.firstName + ' ' + user.lastName }}</p>
-            <v-rating length="5" :value="4.5" dense half-increments></v-rating>
+            <v-rating color="secondary" length="5" :value="4.5" dense half-increments></v-rating>
         </div>
 
         <div class="flex flex-col items-stretch w-screen">
