@@ -93,14 +93,11 @@
 
                 <LocationPicker :location="location" @changeLocation="changeLocation" />
             </div>
-
-
-
         </div>
 
 
 
-        <v-btn depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le rendez-vous</v-btn>
+        <v-btn :disabled="!complete" depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le rendez-vous</v-btn>
     </div>
 
 
@@ -141,6 +138,11 @@ export default {
         computedDateFormatted() {
             return this.formatDate(this.date)
         },
+
+        complete(){
+            return (this.time1 && this.time2 && this.date1 && this.date2 && this.location)
+        }
+
     },
 
     watch: {
@@ -166,7 +168,10 @@ export default {
             return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
         },
         changeLocation(coords) {
-            this.location = coords;
+            this.location= [];
+            this.location.push(coords.lng);
+            this.location.push(coords.lat);
+
         },
         sendMeeting(){
             this.$emit('send-meeting', {time1: this.time1, time2: this.time2, date1: this.date1, date2: this.date2, location: this.location})

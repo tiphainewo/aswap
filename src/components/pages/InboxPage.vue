@@ -1,6 +1,8 @@
 <template>
-  <div>
-
+  <div class="h-full">
+    <p class="pt-4 pl-4 font-semibold text-[#D94693] text-lg !m-0">
+      <v-icon color="secondary">mdi-forum</v-icon>
+      Discussions</p>
     <v-list three-line>
       <template v-for="(item, index) in items">
         <v-subheader

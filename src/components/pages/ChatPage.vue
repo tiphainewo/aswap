@@ -1,5 +1,5 @@
 <template>
-    <v-main class="flex flex-col items-center gap-10 h-[80%]" v-if="user">
+    <div class="flex flex-col items-center h-full w-full" v-if="user">
         <div class="flex flex-row items-center border-b-2 w-screen gap-3  p-3">
             <v-icon v-on:click="$router.push(`/inbox`);">
                     mdi-arrow-left
@@ -15,10 +15,10 @@
             </v-avatar>
             <div class="font-bold">{{ user.firstName + ' ' + user.lastName }}</div>
         </div>
-        <div class=" p-3 flex flex-col justify-between h-full">
+        <div class=" p-3 flex flex-col justify-between h-full w-full">
         
             <ChatComponent :userMessages="userMessages" :userImage="user.userImage" :meeting="meeting"></ChatComponent>
-            <div>
+            <div class="bg-white p-2 fixed bottom-8 w-[95%]">
                 <v-text-field
                     append-outer-icon="mdi-send"
                     prepend-icon="mdi-plus-circle"
@@ -39,7 +39,7 @@
         <div v-if="booking" class="z-10 w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
             <BookingComponent :game="game" @send-meeting="sendMeeting"></BookingComponent>
         </div>
-    </v-main>
+    </div>
     
 </template>
 

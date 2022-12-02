@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <MessageComponent :text="'Bonjour, je voudrais bien blablablablab. Bla bla bla'" :sentByMe="false" :userImage="userImage"></MessageComponent>
-        <MessageComponent :text="'oui blabla'" :sentByMe="true"></MessageComponent>
+    <div class="w-full">
+        <p class="text-gray-400 text-center">Lucas a fait une demande pour <span class="font-semibold">Monopoly</span></p>
+        <MessageComponent :text="'Bonjour, le Monopoly est disponible ?'" :sentByMe="true"></MessageComponent>
+        <MessageComponent :text="'Oui pas de soucis !'" :sentByMe="false" :userImage="userImage"></MessageComponent>
 
         <MessageComponent :text="message" :sentByMe="true" v-for="(message, index) of userMessages" :key="index"></MessageComponent>
         

@@ -1,14 +1,13 @@
 <template>
   <v-app>
-    <v-main>
-      <v-app-bar hide-on-scroll color="primary" class="align-start">
+      <v-app-bar color="primary" class="align-start h-2">
         <div v-on:click="goTo('/')">
           <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
         </div>
       </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser"/>
       <BottomNav />
-    </v-main>
+
   </v-app>
 </template>
 

@@ -2,7 +2,7 @@
 
   <MglMap :accessToken="accessToken" :mapStyle.sync="mapStyle" @load="onMapLoaded" :center="center" :zoom="zoom">
     <MglGeolocateControl position="top-right" />
-    <MglMarker :coordinates="coordinates"/>
+    <MglMarker :coordinates="location"/>
   </MglMap>
 
 </template>
@@ -30,18 +30,6 @@ export default {
       zoom: 13,
       usersArray: this.users,
     };
-  },
-
-  computed: {
-    coordinates(){
-      let coords=[]
-      if (Array.isArray(this.location)) return this.location;
-      else {
-        coords.push(this.location.lng);
-        coords.push(this.location.lat);
-      }
-      return coords
-    }
   },
 
 
