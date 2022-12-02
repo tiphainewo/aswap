@@ -82,7 +82,7 @@
                 </v-dialog>
             </div>
 
-            <div class="w-full h-[40%]">
+            <div class="w-full h-[40%] mb-5">
                 <p class="font-semibold !m-0">Lieu de rendez-vous</p>
                 <!-- <v-text-field 
                     v-model="location"
@@ -91,7 +91,10 @@
                     hide-details
                 ></v-text-field> -->
 
-                <LocationPicker :location="location" @changeLocation="changeLocation" />
+                <div class="w-full h-full">
+
+                    <LocationPicker :location="location" @changeLocation="changeLocation" />
+                </div>
             </div>
         </div>
 
