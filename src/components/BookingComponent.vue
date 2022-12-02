@@ -153,7 +153,17 @@
                 </v-dialog>
             </div>
 
-            <LocationPicker v-model="location" :apiKey="apiKey"/>
+            <div class="w-full">
+                <v-text-field 
+                    v-model="location"
+                    light
+                    prepend-icon="mdi-map-marker"
+                    hide-details
+                ></v-text-field>
+                </div>
+            <LocationPicker :location="location" @changeLocation="changeLocation"/>
+            
+            
         </div>
         
 
@@ -166,15 +176,17 @@
 
 
 <script>
-
+import MapPage from './pages/MapPage.vue'
 import LocationPicker from './LocationPicker.vue'
+
 
 
 export default {
 
     components: {
-        LocationPicker
-    },
+    MapPage,
+    LocationPicker
+},
 
     props: ['game'],
 
@@ -213,6 +225,9 @@ export default {
       const [day, month, year] = date.split('/')
       return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
     },
+    changeLocation(coords) {
+        this.location= coords;
+    }
   },
 }
 

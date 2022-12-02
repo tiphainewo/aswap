@@ -35,7 +35,7 @@
         </div>
 
         <v-overlay :value="booking" :opacity="0.2">
-            <div class="w-screen rounded-t-3xl bg-white h-[70%] fixed bottom-0 left-0 p-5 text-black">
+            <div class="w-screen rounded-t-3xl bg-white h-[90%] fixed bottom-0 left-0 p-5 text-black">
                 <BookingComponent :game="game"></BookingComponent>
             </div>
         </v-overlay>
@@ -68,7 +68,7 @@ export default {
             usersArray: this.users,
             id: this.$route.params.id,
             newMessage: "",
-            booking : true,
+            booking : false,
             userMessages: [],
             game: {
                 name: "Monopoly", 
