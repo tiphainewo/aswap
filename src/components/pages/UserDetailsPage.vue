@@ -1,5 +1,5 @@
 <template>
-    <v-main class="flex flex-col items-center mt-5 mx-5 gap-10 h-full" v-if="user">
+    <v-main class="flex flex-col items-center pt-5 px-5 gap-10 h-full bg-[#EDEEB6]" v-if="user">
         <v-btn
               icon
               color="secondary"
@@ -18,15 +18,15 @@
                     mdi-account-circle
                 </v-icon>
             </v-avatar>
-            <p>{{ user.firstName + ' ' + user.lastName }}</p>
+            <p class="!m-0 font-semibold">{{ user.firstName + ' ' + user.lastName }}</p>
             <v-rating color="secondary" length="5" :value="4.5" dense half-increments small></v-rating>
         </div>
 
         <div class="flex flex-col items-stretch w-screen">
             <p class="font-bold text-xl text-primary">Jeux</p>
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-1 gap-2">
                 <div v-for="game of games" v-bind:key="game.id"  v-on:click="openGame(game)">
-                    <GameCard :game="game">
+                    <GameCard :game="game" :user="user">
                     </GameCard>
                 </div>
                 
