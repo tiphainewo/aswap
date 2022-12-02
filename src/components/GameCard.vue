@@ -1,8 +1,10 @@
 <template>
-    <div class="flex flex-row items-start w-full bg-white hover:bg-gray-100 p-2 pb-0 rounded-lg">
+    <div class="flex flex-row items-start w-full bg-white p-2 pb-0 rounded-lg" >
 
-        <img class="w-30 h-28 bg-grey-500 mb-2 rounded-lg"
+        <img class="w-30 h-28 bg-grey-500 mb-2 rounded-lg" :class="disabled && 'opacity-40'"
             src="https://images.unsplash.com/photo-1585504198199-20277593b94f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3117&q=80" />
+
+        <p v-if="disabled" class="absolute w-30 text-center mt-11 font-semibold">Pas disponible</p>
 
         <div class="flex flex-col px-3 justify-between h-30 overflow-hidden" v-if="user">
             <div>
@@ -32,7 +34,7 @@
 <script>
 
 export default {
-    props: ['game', 'user']
+    props: ['game', 'user', 'disabled']
 }
 
 </script>

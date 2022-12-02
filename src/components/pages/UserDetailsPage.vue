@@ -26,7 +26,7 @@
             <p class="font-bold text-xl text-primary">Jeux</p>
             <div class="grid grid-cols-1 gap-2">
                 <div v-for="game of games" v-bind:key="game.id"  v-on:click="openGame(game)">
-                    <GameCard :game="game" :user="user">
+                    <GameCard :game="game" :user="user" :disabled="(getRandom() > 6) ? true : false">
                     </GameCard>
                 </div>
                 
@@ -60,6 +60,9 @@ export default {
         closeGame(){
             this.overlay = false;
             this.selectedGame={};
+        },
+        getRandom() {
+            return Math.floor(Math.random() * 10);
         }
     },
 
