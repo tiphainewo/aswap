@@ -29,8 +29,19 @@ export default {
       center: [4.835659, 45.748043],
       zoom: 13,
       usersArray: this.users,
-      coordinates: [this.location.lat, this.location.lng]
     };
+  },
+
+  computed: {
+    coordinates(){
+      let coords=[]
+      if (Array.isArray(this.location)) return this.location;
+      else {
+        coords.push(this.location.lng);
+        coords.push(this.location.lat);
+      }
+      return coords
+    }
   },
 
 
@@ -45,7 +56,6 @@ export default {
       this.map = map;
       this.map.on('click', (e) => {
         this.$emit('changeLocation', e.lngLat);
-        console.log(this.location)
       });
     },
 
@@ -57,4 +67,12 @@ export default {
 
 
 </script>
+
+<style>
+
+.mapboxgl-canvas{
+  border-radius: 1em;
+}
+
+</style>
 

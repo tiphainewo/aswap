@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-col content-between w-full h-full p-2 rounded gap-5">
+    <div class="flex flex-col content-between w-full h-full p-2 rounded gap-2">
         <div class="rounded-full h-1.5 bg-light-900 w-[30%] self-center"></div>
 
-        <div class="flex flex-col items-start w-full gap-5">
-            <p class="font-semibold text-[#D94693] text-lg ">Créer un rendez-vous pour <span class="font-bold">{{ game.name }}</span></p>
+        <div class="flex flex-col items-start w-full gap-7">
+            <p class="font-semibold text-[#D94693] text-lg !m-0 !p-0">Créer un rendez-vous pour <span class="font-bold">{{ game.name }}</span></p>
 
             <div class="w-full">
                 <p class="font-semibold !m-0">Date et heure de début</p>
@@ -153,22 +153,25 @@
                 </v-dialog>
             </div>
 
-            <div class="w-full">
-                <v-text-field 
+            <div class="w-full h-[40%]">
+                <p class="font-semibold !m-0">Lieu de rendez-vous</p>
+                <!-- <v-text-field 
                     v-model="location"
                     light
                     prepend-icon="mdi-map-marker"
                     hide-details
-                ></v-text-field>
-                </div>
-            <LocationPicker :location="location" @changeLocation="changeLocation"/>
+                ></v-text-field> -->
+
+<LocationPicker :location="location" @changeLocation="changeLocation"/>
+            </div>
+            
             
             
         </div>
         
 
 
-        <v-btn class="w-full" color="secondary">Envoyer le rendez-vous</v-btn>
+        <v-btn class="w-full" color="secondary" :click="$emit('sendMeeting')">Envoyer le rendez-vous</v-btn>
     </div>
 
 

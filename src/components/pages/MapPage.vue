@@ -1,6 +1,6 @@
 <template>
 
-  <MglMap :accessToken="accessToken" :mapStyle.sync="mapStyle" @load="onMapLoaded" :center="center" :zoom="zoom">
+  <MglMap :accessToken="accessToken" :mapStyle.sync="mapStyle" @load="onMapLoaded" :center="center" :zoom="zoom" class="map">
     <MglNavigationControl position="top-right" />
     <MglGeolocateControl position="top-right" />
 
@@ -69,4 +69,10 @@ export default {
 
 
 </script>
+
+<style>
+.map{
+  border-radius: 1em !important;
+}
+</style>
 

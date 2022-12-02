@@ -35,8 +35,8 @@
         </div>
 
         <v-overlay :value="booking" :opacity="0.2">
-            <div class="w-screen rounded-t-3xl bg-white h-[90%] fixed bottom-0 left-0 p-5 text-black">
-                <BookingComponent :game="game"></BookingComponent>
+            <div class="w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
+                <BookingComponent :game="game" @send-meeting="sendMeeting"></BookingComponent>
             </div>
         </v-overlay>
     </v-main>
@@ -60,6 +60,9 @@ export default {
         },
         openBooking(){
             this.booking = true;
+        },
+        sendMeeting(){
+            this.booking=false
         }
     },
 
