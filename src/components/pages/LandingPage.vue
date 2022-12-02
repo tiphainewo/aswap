@@ -189,7 +189,6 @@ export default {
   computed: {
     imgHeight: function () {
       var offset = 320;
-      console.log("new image height is " + (this.pageHeight - offset));
       return this.pageHeight - offset;
     },
   },

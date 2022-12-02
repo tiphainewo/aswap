@@ -2,8 +2,8 @@
   <v-app>
     <v-main>
       <v-app-bar hide-on-scroll color="primary" class="align-start">
-        <div v-on:click="goTo('home')">
-          <img src="logo_colors.png" class="object-contain w-1/2" />
+        <div v-on:click="goTo('/')">
+          <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
         </div>
       </v-app-bar>
       <router-view :users="users" :games="games" @addUser="addUser"/>
@@ -28,7 +28,9 @@ export default {
   },
 
   data: function () {
-    return {};
+    return {
+      publicPath: process.env.BASE_URL
+    };
   },
 
   computed: {
@@ -63,12 +65,10 @@ export default {
   methods: {
     addGame: function (game) {
       this.games.push(game);
-      console.log(this.games);
     },
 
     addUser: function (user) {
       this.users.push(user);
-      console.log(this.users);
     },
     goTo(page) {
       this.$router.push(`/${page}`);

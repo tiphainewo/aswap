@@ -17,7 +17,7 @@
         </div>
         <div class=" p-3 flex flex-col justify-between h-full">
         
-            <ChatComponent :userMessages="userMessages" :userImage="user.userImage"></ChatComponent>
+            <ChatComponent :userMessages="userMessages" :userImage="user.userImage" :meeting="meeting"></ChatComponent>
             <div>
                 <v-text-field
                     append-outer-icon="mdi-send"
@@ -34,11 +34,11 @@
             
         </div>
 
-        <v-overlay :value="booking" :opacity="0.2">
-            <div class="w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
-                <BookingComponent :game="game" @send-meeting="sendMeeting"></BookingComponent>
-            </div>
-        </v-overlay>
+        <v-overlay :value="booking" :opacity="0.2" v-on:click.stop="(booking=false)"></v-overlay>
+
+        <div v-if="booking" class="z-10 w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
+            <BookingComponent :game="game" @send-meeting="sendMeeting"></BookingComponent>
+        </div>
     </v-main>
     
 </template>
@@ -54,15 +54,16 @@ export default {
 
     methods: {
         sendMessage(){
-            console.log(this.newMessage)
             this.userMessages.push(this.newMessage)
             this.newMessage=""
         },
         openBooking(){
             this.booking = true;
         },
-        sendMeeting(){
+        sendMeeting(payload){
+            console.log(payload)
             this.booking=false
+            this.meeting=payload;
         }
     },
 
@@ -79,7 +80,8 @@ export default {
                 type: "Jeu de plateau",
                 joueurs: "2-5",
                 age: "10+"
-            }
+            },
+            meeting: {}
         };
     },
     computed: {
