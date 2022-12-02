@@ -2,7 +2,7 @@
     <div class="flex py-3 gap-3 flex-row-reverse">
 
         <v-avatar size="40">
-            <v-img src='https://cdn.vuetifyjs.com/images/john.jpg'></v-img>
+            <v-img src='@/assets/userPP.png'></v-img>
         </v-avatar>
         <div class="rounded-lg bg-light-900 w-[80%] p-2 bg-[#D4D64E] flex flex-col gap-2">
             <p class="font-semibold">Proposition de rendez-vous</p>
