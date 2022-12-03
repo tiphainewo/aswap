@@ -128,7 +128,8 @@ export default new Vuex.Store({
       }
     },
     SET_Items(state, items) {
-      state.games = items
+      state.games = items;
+      state.matchedGames = items;
     }
 
   },

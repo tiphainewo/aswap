@@ -23,6 +23,7 @@
                 <v-chip small color="secondary">{{game.min_players}}-{{game.max_players}} joueurs</v-chip>
                 <v-chip small color="secondary">{{game.min_age}}+ ans</v-chip>
             </v-chip-group>
+
         </div>
 
 

@@ -1,16 +1,18 @@
 <template>
     <div class="flex flex-col content-between w-full h-full p-2 rounded">
         
-        <div class="flex flex-col items-start w-full">
-            <img class="w-full h-40 bg-grey-500 rounded" src="https://images.unsplash.com/photo-1585504198199-20277593b94f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3117&q=80" />
+        <div class="flex flex-col items-start justify-start w-full">
+            <img class="w-full h-40 bg-grey-500 rounded" :src="game.image_url" />
         
             <p>{{game.name}}</p>
             <div class="flex gap-1 items-start">
                 <v-chip small color="secondary">Jeu de plateau</v-chip>
-                <v-chip small color="secondary">2-5 joueurs</v-chip>
-                <v-chip small color="secondary">6+ ans</v-chip>
+                <v-chip small color="secondary">{{game.min_players}}-{{game.max_players}} joueurs</v-chip>
+                <v-chip small color="secondary">{{game.min_age}}+ ans</v-chip>
             </div>
 
+            
+            <div class=" h-full truncate h-30" v-html="game.description"></div>
         </div>
             
         
