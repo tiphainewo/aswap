@@ -4,25 +4,181 @@
             "id": 1,
             "firstName": "Lucie",
             "lastName": "Martin",
-            "userImage":"https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-            "city": "Lyon",
-            "coordinates":[4.829539, 45.740351]
+            "long": 4.8490743085,
+            "lat": 45.7417831055,
+            "userImage": "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+            "gamesOwned": 3
         },
         {
             "id": 2,
-            "firstName": "Léo",
-            "lastName": "Dupont",
-            "userImage":"https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-            "city": "Lyon",
-            "coordinates":[4.838681, 45.748648]
+            "firstName": "Lucas",
+            "lastName": "Corless",
+            "long": 4.8822248892,
+            "lat": 45.7258923749,
+            "userImage": "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+            "gamesOwned": 3
         },
         {
             "id": 3,
-            "firstName": "Jean",
-            "lastName": "M.",
-            "userImage":"https://cdn.vuetifyjs.com/images/lists/2.jpg",
-            "city": "Lyon",
-            "coordinates":[4.829539, 45.748648]
+            "firstName": "Reggis",
+            "lastName": "Moseley",
+            "long": 4.8751869579,
+            "lat": 45.7229293568,
+            "userImage": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+            "gamesOwned": 7
+        },
+        {
+            "id": 4,
+            "firstName": "Tiffani",
+            "lastName": "Seyers",
+            "long": 4.827089329,
+            "lat": 45.7625794763,
+            "userImage": "http://dummyimage.com/300x300.png/dddddd/000000",
+            "gamesOwned": 4
+        },
+        {
+            "id": 5,
+            "firstName": "Blondy",
+            "lastName": "Colmore",
+            "long": 4.8784267443,
+            "lat": 45.7278693964,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 6
+        },
+        {
+            "id": 6,
+            "firstName": "Ethelyn",
+            "lastName": "Banks",
+            "long": 4.8906401916,
+            "lat": 45.7383468974,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 5
+        },
+        {
+            "id": 7,
+            "firstName": "Dollie",
+            "lastName": "Buckham",
+            "long": 4.8404296265,
+            "lat": 45.7531844428,
+            "userImage": "http://dummyimage.com/300x300.png/dddddd/000000",
+            "gamesOwned": 5
+        },
+        {
+            "id": 8,
+            "firstName": "Erskine",
+            "lastName": "McCerery",
+            "long": 4.8320508134,
+            "lat": 45.7800505317,
+            "userImage": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
+            "gamesOwned": 1
+        },
+        {
+            "id": 9,
+            "firstName": "Jaquenetta",
+            "lastName": "Hurdis",
+            "long": 4.8362589636,
+            "lat": 45.7880033516,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 1
+        },
+        {
+            "id": 10,
+            "firstName": "Gran",
+            "lastName": "Beetham",
+            "long": 4.8518585137,
+            "lat": 45.7286702663,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 3
+        },
+        {
+            "id": 11,
+            "firstName": "Leonore",
+            "lastName": "Casine",
+            "long": 4.8277509946,
+            "lat": 45.7614905125,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 2
+        },
+        {
+            "id": 12,
+            "firstName": "Shane",
+            "lastName": "Figgs",
+            "long": 4.865861788,
+            "lat": 45.7359169121,
+            "userImage": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
+            "gamesOwned": 1
+        },
+        {
+            "id": 13,
+            "firstName": "Tanny",
+            "lastName": "Hedan",
+            "long": 4.8411440018,
+            "lat": 45.7741558519,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 4
+        },
+        {
+            "id": 14,
+            "firstName": "Saunders",
+            "lastName": "Mussared",
+            "long": 4.8282407749,
+            "lat": 45.7557692074,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 7
+        },
+        {
+            "id": 15,
+            "firstName": "Raimundo",
+            "lastName": "Sebert",
+            "long": 4.8406531561,
+            "lat": 45.7693508313,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 1
+        },
+        {
+            "id": 16,
+            "firstName": "Sara",
+            "lastName": "Petchey",
+            "long": 4.8327590075,
+            "lat": 45.7482012169,
+            "userImage": "http://dummyimage.com/300x300.png/cc0000/ffffff",
+            "gamesOwned": 3
+        },
+        {
+            "id": 17,
+            "firstName": "Katharine",
+            "lastName": "Phlippsen",
+            "long": 4.8808656372,
+            "lat": 45.7575524748,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 5
+        },
+        {
+            "id": 18,
+            "firstName": "Boyd",
+            "lastName": "Calderwood",
+            "long": 4.815899528,
+            "lat": 45.7623258728,
+            "userImage": "http://dummyimage.com/300x300.png/5fa2dd/ffffff",
+            "gamesOwned": 2
+        },
+        {
+            "id": 19,
+            "firstName": "Tandy",
+            "lastName": "Littleton",
+            "long": 4.8453163613,
+            "lat": 45.770656214,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 7
+        },
+        {
+            "id": 20,
+            "firstName": "Rosemonde",
+            "lastName": "Very",
+            "long": 4.8199786344,
+            "lat": 45.7489523977,
+            "userImage": "http://dummyimage.com/300x300.png/ff4444/ffffff",
+            "gamesOwned": 1
         }
     ]
 }

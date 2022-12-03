@@ -5,7 +5,7 @@
         <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
       </div>
     </v-app-bar>
-    <router-view :users="users" :games="games" @addUser="addUser" />
+    <router-view :users="users" @addUser="addUser" />
     <BottomNav />
 
   </v-app>
@@ -15,8 +15,6 @@
 import BottomNav from ".//components/BottomNav";
 import usersJSON from "./data/users.json";
 import User from "./classes/User";
-import gamesJSON from "./data/games.json";
-import Game from "./classes/Game";
 
 export default {
   name: "App",
@@ -42,29 +40,18 @@ export default {
             user.firstName,
             user.lastName,
             user.userImage,
-            user.city,
-            user.coordinates
+            user.long,
+            user.lat,
+            user.gamesOwned
           )
         );
       }
       return usersArray;
     },
 
-    games() {
-      let gamesArray = [];
-      for (let game of gamesJSON.games) {
-        gamesArray.push(
-          new Game(game.gameId, game.gameName, game.gameImage, game.userId)
-        );
-      }
-      return gamesArray;
-    },
   },
 
   methods: {
-    addGame: function (game) {
-      this.games.push(game);
-    },
 
     addUser: function (user) {
       this.users.push(user);

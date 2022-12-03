@@ -24,17 +24,19 @@
 
         <div class="flex flex-col items-stretch w-screen">
             <p class="font-bold text-xl text-primary">Jeux</p>
-            <div class="grid grid-cols-1 gap-2">
-                <div v-for="game of games" v-bind:key="game.id"  v-on:click="openGame(game)">
-                    <GameCard :game="game" :user="user" :disabled="(getRandom() > 6) ? true : false">
+            <div class="grid grid-cols-1 gap-2" v-if="(allGames && allGames.length > 0)">
+                <div v-for="game in allGames.slice(gamesStart,gamesStart+user.gamesOwned)" v-bind:key="game.id"  v-on:click="openGame(game)">
+                    <GameCard :game="game" :user="user" :disabled="(getRandom(10) > 6) ? true : false">
                     </GameCard>
                 </div>
                 
             </div>
+
+            <div v-else class="h-full w-full flex items-center justify-center"><v-progress-circular :size="50" indeterminate color="secondary"></v-progress-circular></div>
         </div>
         <v-overlay :value="overlay" v-on:click="closeGame()" :opacity="0.2">
             <div class="w-screen rounded-t-3xl bg-white h-[70%] fixed bottom-0 left-0 p-5 text-black">
-                <GameCardExpanded :game="selectedGame"></GameCardExpanded>
+                <GameCardExpanded :game="selectedGame" :user="user"></GameCardExpanded>
             </div>
         </v-overlay>    
     </v-main>
@@ -44,13 +46,12 @@
 <script lang="ts">
 import GameCard from '../GameCard.vue';
 import GameCardExpanded from '../GameCardExpanded.vue';
-
-
+import { mapGetters } from 'vuex'
 
 export default { 
     components: { GameCard, GameCardExpanded },
 
-    props: ["users", "games"],
+    props: ["users"],
 
     methods: {
         openGame(game) {
@@ -61,8 +62,22 @@ export default {
             this.overlay = false;
             this.selectedGame={};
         },
-        getRandom() {
-            return Math.floor(Math.random() * 10);
+        getRandom(num) {
+            let rand = Math.floor(Math.random() * num);
+            return rand;
+        }
+    },
+
+    mounted() {
+        this.$store.dispatch('loadItems')
+    },
+
+    computed: {
+        ...mapGetters([
+            'allGames'
+        ]),
+        user() {
+            return this.usersArray.find(user => user.id == this.id);
         }
     },
 
@@ -72,12 +87,8 @@ export default {
             id: this.$route.params.id,
             overlay: false,
             selectedGame: {},
+            gamesStart: Math.floor(Math.random() * 90),
         };
-    },
-    computed: {
-        user() {
-            return this.usersArray.find(user => user.id == this.id);
-        }
     },
     
 

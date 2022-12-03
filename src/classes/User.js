@@ -4,17 +4,17 @@ export default class User {
     firstName = null;
     lastName = null;
     userImage = null;
-    city = null;
     coordinates = null;
+    gamesOwned=0;
  
-    constructor(id, fname, lname, image, city, coordinates) 
+    constructor(id, fname, lname, image, long, lat, gamesOwned) 
     {
       this.id = id;
       this.firstName = fname;
       this.lastName = lname;
       this.userImage = image;
-      this.city = city;
-      this.coordinates = coordinates;
+      this.coordinates = [long, lat];
+      this.gamesOwned = gamesOwned;
     }
     
     getFullName()

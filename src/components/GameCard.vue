@@ -9,7 +9,7 @@
 
         <div class="flex flex-col px-3 justify-between h-30 overflow-hidden" v-if="user">
             <div>
-                <p class="font-bold !m-0">{{ game.name }}</p>
+                <p class="font-bold !m-0 truncate">{{ game.name }}</p>
                 <p class="text-grey-400 text-xs !m-0">A 1.5km</p>
                 <p class="text-xs !m-0">
                     <v-avatar size="20" v-if="user.userImage">
