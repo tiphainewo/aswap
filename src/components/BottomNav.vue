@@ -7,8 +7,8 @@
     background-color="primary"
   >
     <v-btn v-on:click="goTo('games')" color="primary" class="!h-full"
-      ><span>Catalogue</span>
-      <v-icon>mdi-basket</v-icon>
+      ><span>Jeux</span>
+      <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
     <v-btn v-on:click="goTo('map')" color="primary" class="!h-full"

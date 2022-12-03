@@ -1,8 +1,9 @@
 <template>
     <div class="flex flex-row items-start w-full bg-white p-2 pb-0 rounded-lg" >
 
-        <img class="w-30 h-28 bg-grey-500 mb-2 rounded-lg" :class="disabled && 'opacity-40'"
-            src="https://images.unsplash.com/photo-1585504198199-20277593b94f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3117&q=80" />
+        <img class="w-30 min-w-30 h-28 bg-grey-500 mb-2 rounded-lg" :class="disabled && 'opacity-40'"
+            :src="game.image_url"  v-if="game.image_url"/>
+        <div v-else class="w-30 min-w-30 h-28 bg-grey-500 mb-2 rounded-lg"></div>
 
         <p v-if="disabled" class="absolute w-30 text-center mt-11 font-semibold">Pas disponible</p>
 
@@ -19,8 +20,8 @@
             </div>
             <v-chip-group color="secondary">
                 <v-chip small color="secondary">Jeu de plateau</v-chip>
-                <v-chip small color="secondary">2-5 joueurs</v-chip>
-                <v-chip small color="secondary">6+ ans</v-chip>
+                <v-chip small color="secondary">{{game.min_players}}-{{game.max_players}} joueurs</v-chip>
+                <v-chip small color="secondary">{{game.min_age}}+ ans</v-chip>
             </v-chip-group>
         </div>
 
