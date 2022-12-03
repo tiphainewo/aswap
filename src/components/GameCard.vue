@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-row items-start w-full bg-white p-2 pb-0 rounded-lg" >
 
-        <img class="w-30 min-w-30 h-28 bg-grey-500 mb-2 rounded-lg" :class="disabled && 'opacity-40'"
+        <img class="object-contain w-30 min-w-30 h-28 bg-grey-500 mb-2 rounded-lg" :class="disabled && 'opacity-40'"
             :src="game.image_url"  v-if="game.image_url"/>
         <div v-else class="w-30 min-w-30 h-28 bg-grey-500 mb-2 rounded-lg"></div>
 

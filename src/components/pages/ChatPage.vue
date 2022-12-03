@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col items-center h-full w-full" v-if="user">
         <div class="flex flex-row items-center border-b-2 w-screen gap-3  p-3">
-            <v-icon v-on:click="$router.push(`/inbox`);">
+            <v-icon v-on:click="$router.go(-1)">
                     mdi-arrow-left
                 </v-icon>
             <v-avatar size="50" v-if="user.userImage">

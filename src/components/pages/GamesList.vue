@@ -15,7 +15,7 @@
         <v-overlay :value="showGameView" :opacity="0.2" v-on:click.stop="(showGameView=false)"></v-overlay>
 
         <div v-if="showGameView" class="z-10 w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
-            <GameCardExpanded :game="selectedGame"></GameCardExpanded>
+            <GameCardExpanded :game="selectedGame" :user="users[0]"></GameCardExpanded>
         </div>
     
     </div>

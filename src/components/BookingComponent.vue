@@ -100,7 +100,7 @@
 
 
 
-        <v-btn :disabled="!complete" depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le rendez-vous</v-btn>
+        <v-btn rounded :disabled="!complete" depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le rendez-vous</v-btn>
     </div>
 
 

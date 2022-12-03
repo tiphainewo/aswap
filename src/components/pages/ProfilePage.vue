@@ -7,7 +7,7 @@
           <p class="!m-0 font-semibold">Lucas Chalamet</p>
           <v-rating color="secondary" length="5" :value="4.5" dense half-increments small></v-rating>
       </div>
-        <v-btn depressed small color="secondary">Ajouter un jeu</v-btn>
+        <v-btn rounded depressed small color="secondary">Ajouter un jeu</v-btn>
       
       <div class="flex flex-col items-stretch w-screen">
           <p class="font-bold text-xl text-primary">Jeux</p>
