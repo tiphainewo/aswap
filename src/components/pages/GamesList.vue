@@ -1,30 +1,51 @@
 <template>
     <div class="flex flex-col items-center pt-5 px-5 gap-2 h-full bg-[#EDEEB6]">
-        <Filters/>
-        <GameCard v-for="game in info" v-bind:key="game.id" :game="game" :user="users[0]"/>
+        <Filters />
+        <div class="flex flex-col gap-2 ">
+            <div @click="setSelectedGameToView(game)" v-for="(game, index) in allGames" :key="index">
+                <GameCard :game="game"  :user="users[0]"/>
+            </div>
+        </div>
     </div>
 
 
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters, mapMutations, mapState } from 'vuex'
 import GameCard from '../GameCard.vue'
 import Filters from '../Filter.vue'
 
 export default ({
     props: ['users'],
-    components: {GameCard, Filters},
+
     data() {
         return {
-            info: null
+            info: null,
+            showGameView: false,
         }
     },
-    mounted() {
-        axios
-            .get('https://api.boardgameatlas.com/api/search?limit=100&client_id=z6FWVq6sRg')
-            .then(response => (this.info = response.data.games))
-            .catch(error => console.log(error))
+
+    mounted () {
+        this.$store.dispatch('loadItems')
+    },
+
+    computed: {
+        ...mapState(['selectedGame']),
+        ...mapGetters([
+            'matchedGames', 'allGames'
+        ])
+    },
+    methods: {
+        ...mapMutations(['setSelectedGame']),
+        setSelectedGameToView(game) {
+            this.setSelectedGame(game)
+            this.showGameView = true
+        }
+    },
+    components: {
+        Filters,
+        GameCard,
     }
 })
 </script>
