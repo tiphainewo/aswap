@@ -4,20 +4,22 @@
                 class="pr-2">mdi-cards-playing</v-icon>Liste des jeux</p>
         <Filters />
         <div class="flex flex-col justify-start gap-2 h-full " v-if="(matchedGames && matchedGames.length > 0)">
-            <div @click="setSelectedGameToView(game)" v-for="(game, index) in matchedGames" :key="index">
-                <GameCard :game="game" :user="users[0]" />
-            </div>
-        </div>
-        
-        <div v-else class="h-full w-full flex items-center justify-center"><v-progress-circular :size="50" indeterminate color="secondary"></v-progress-circular></div>
-        
 
-        <v-overlay :value="showGameView" :opacity="0.2" v-on:click.stop="(showGameView=false)"></v-overlay>
+            <GameCard :game="game" :user="getRandomUser()" @select-user="setSelectedGameToView" v-for="(game, index) in matchedGames" :key="index" />
 
-        <div v-if="showGameView" class="z-10 w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
-            <GameCardExpanded :game="selectedGame" :user="users[0]"></GameCardExpanded>
         </div>
-    
+
+        <div v-else class="h-full w-full flex items-center justify-center"><v-progress-circular :size="50" indeterminate
+                color="secondary"></v-progress-circular></div>
+
+
+        <v-overlay :value="showGameView" :opacity="0.2" v-on:click.stop="(showGameView = false)"></v-overlay>
+
+        <div v-if="showGameView"
+            class="z-10 w-screen rounded-t-3xl bg-white h-[80%] fixed bottom-0 left-0 p-5 text-black">
+            <GameCardExpanded :game="selectedGame" :user="selectedUser"></GameCardExpanded>
+        </div>
+
     </div>
 
 
@@ -36,6 +38,7 @@ export default ({
         return {
             info: null,
             showGameView: false,
+            selectedUser: {}
         }
     },
 
@@ -51,9 +54,13 @@ export default ({
     },
     methods: {
         ...mapMutations(['setSelectedGame']),
-        setSelectedGameToView(game) {
-            this.setSelectedGame(game)
+        setSelectedGameToView(payload) {
+            this.setSelectedGame(payload.game)
+            this.selectedUser=payload.user;
             this.showGameView = true
+        },
+        getRandomUser() {
+            return this.users[Math.floor(Math.random() * this.users.length)];
         }
     },
     components: {
