@@ -1,208 +1,92 @@
 <template>
-  <v-app light>
-    <v-content>
-      <section>
-        <v-parallax :src="imageLink.sub_main" height="600">
-          <v-layout column align-center justify-center class="white--text">
-            <h1>Titre</h1>
-          </v-layout>
-        </v-parallax>
-      </section>
+  <div class="h-full w-full flex flex-col bg-[#EDEEB6] items-center pb-15">
+    <div class="w-full h-70 bg-[#D94693] text-white text-3xl bigText text-center flex items-center flex-none">
+      Bienvenue sur ASWAP !
+    </div>
+    <div class="flex flex-col items-center flex-none m-5">
+      <p class="bigText text-2xl">
+        Qui sommes-nous?
+      </p>
+      <div class="rounded-xl p-5 bg-[#D4D64E] text-[#50398E] font-bold text-justify">
+        Nous sommes une équipe jeune, lyonnaise et dynamique.<br/><br/>
+        Nous encadrons et sécurisons le prêt de jeu de société entre personnes selon des critères définis.</div>
 
-      <section>
-        <v-layout column wrap class="my-5" align-center>
-          <v-flex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
-              <h2 class="headline">Titre</h2>
-              <span class="subheading">
-                Sous titre
-              </span>
-            </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap align-center>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >icone</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Titre</div>
-                    </v-card-title>
-                    <v-card-text>
-                      texte
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >icon</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">titre</div>
-                    </v-card-title>
-                    <v-card-text>
-                     texte
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >icone</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">
-                        titre
-                      </div>
-                    </v-card-title>
-                    <v-card-text>
-                      texte
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-layout>
-      </section>
+    </div>
 
-      <section>
-        <v-parallax :src="imageLink.main" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">
-              texte
-            </div>
-           
-            <v-btn
-              class="blue lighten-2 mt-5"
-              dark
-              large
-              href="/pre-made-themes"
-            >
-              Get more info
-            </v-btn>
-          </v-layout>
-        </v-parallax>
-      </section>
+    <div class="flex flex-col items-center flex-none m-5">
+      <p class="bigText text-2xl">
+        Le concept
+      </p>
+      <div class="rounded-xl p-5 bg-[#D4D64E] text-[#50398E] font-bold text-justify">
+        Aswap est une application mobile ou il est possible de louer et d’emprunter des jeux de sociétés à différents
+        membre de la communauté dans une même ville.<br/><br/>
 
-      <section>
-        <v-container grid-list-md>
-          <v-layout row wrap>
-            <v-flex xs12 text-xs-center class="mt-5">
-              <div class="headline">headline</div>
-              <br />
-              <div>
-                texte
-              </div>
-            </v-flex>
-            
-          </v-layout>
-        </v-container>
-      </section>
+        Grâce au système de localisation, vous pouvez voir en temps réel les personnes autour de vous qui détiennent le
+        jeu qui vous intéresse et échanger avec eux.
+      </div>
+    </div>
 
-      <section>
-        <v-parallax :src="imageLink.social_cover" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">
-              texte
-            </div>
-          </v-layout>
-        </v-parallax>
-      </section>
+    <div class="flex flex-col items-center flex-none m-5">
+      <p class="bigText text-2xl">
+        Nos engagements
+      </p>
+      <div class="rounded-xl p-5 bg-[#D4D64E] text-[#50398E] font-bold text-justify">
+        Chez Aswap nous nous engageons à encadrer et sécuriser le prêt de vos jeux de sociétés avec un système de
+        caution versé par l’emprunteur et rendu au préteur en cas de problème.<br/><br/>
 
-      <section>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-center class="my-5">
-            <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Titre</div>
-                </v-card-title>
-                <v-card-text>
-                  Texte
-                </v-card-text>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 offset-sm1>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Titre</div>
-                </v-card-title>
-                <v-card-text>
-                  Texte
-                </v-card-text>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </section>
+        Des avis et notations sur les profils des utilisateurs sont également présents.
+      </div>
+    </div>
 
-      <section>
-        <v-container>
-          <v-layout>
-            <v-flex xs12 class="text-xs-center">
-              <img height="200px" :src="imageLink.logo" />
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </section>
-    </v-content>
-  </v-app>
+    <div class="flex flex-col items-center flex-none m-5 gap-4">
+      <p class="bigText text-2xl">
+       Questions fréquentes
+      </p>
+
+      <v-expansion-panels
+        flat
+      >
+        <v-expansion-panel class="rounded-xl mb-4 bg-[]" v-for="question of questions" v-bind:key="question">
+          <v-expansion-panel-header class="font-bold text-[#50398E]" @click="(question.open= !question.open)" v-bind:class="{'rounded-xl': !question.open, ' rounded-t-xl' : question.open}" color="#D4D64E">{{question.header}}</v-expansion-panel-header>
+          <v-expansion-panel-content color="#D4D64E" class="rounded-b-xl">
+            {{question.content}}
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+
+      </v-expansion-panels>
+    </div>
+  </div>
+
 </template>
 
 <script>
-import games from "../../data/games.json";
-import users from "../../data/users.json";
 
-export default {
-  name: "App",
-  data: function () {
-    return {
-      games: games,
-      users: users,
-      title: "Endorfine",
-      imageLink: {
-        main: "https://firebasestorage.googleapis.com/v0/b/endorfinevue.appspot.com/o/assets%2Fb13f0434-b228-11e6-8e5d-5252025056ab_web_scale_0.4666667_0.4666667__.jpg?alt=media&token=660df23e-599e-434b-9313-ba69c973eeea",
-        sub_main:
-          "https://firebasestorage.googleapis.com/v0/b/endorfinevue.appspot.com/o/assets%2FNight-Club-Clubbing-Jobs-Abroad2.jpg?alt=media&token=82bbda7d-5df4-430b-9217-adaf1c8485c5",
-        logo: "https://firebasestorage.googleapis.com/v0/b/endorfinevue.appspot.com/o/assets%2Fandroid-chrome-512x512.png?alt=media&token=8a0a66f6-4741-4ff6-8f28-eb9ec74374df",
-        social_cover:
-          "https://firebasestorage.googleapis.com/v0/b/endorfinevue.appspot.com/o/assets%2Fo-NIGHTCLUB-facebook.jpg?alt=media&token=cefc5c4c-9714-41da-9c22-f63caf5e89a4",
+export default ({
+  data: () => ({
+    questions: [
+      { 
+        header : "Quels types de jeux sont disponibles ?",
+        content: "Some content",
+        open: false,
       },
-    };
-  },
-  methods: {
-    subscribe: function () {
-      this.subscribed = !this.subscribed;
-    },
-  },
-
-  computed: {
-    imgHeight: function () {
-      var offset = 320;
-      return this.pageHeight - offset;
-    },
-  },
-};
+      { 
+        header : "Combien de temps dure un prêt ?",
+        content: "Some content",
+        open: false,
+      },
+      { 
+        header : "Combien de temps dure un prêt ?",
+        content: "Some content",
+        open: false,
+      },
+    ]
+  }),
+})
 </script>
 
-<style scoped>
-.finedTitle {
-  font-weight: 900;
-  text-shadow: 2px 2px #000000;
-}
-
-.social-icon {
-  font-size: 21px;
-  color: white;
+<style>
+.bigText {
+  font-family: 'Bowlby One SC';
+  color: #50398E;
 }
 </style>
