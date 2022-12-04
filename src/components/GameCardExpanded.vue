@@ -8,9 +8,11 @@
             <div class="flex flex-row items-center gap-2 flex-none">
 
                 <div class="text-center">
-                    <v-avatar size="30" v-if="user.userImage">
-                        <v-img :src="user.userImage"></v-img>
+                    <v-avatar size="30" v-if="(user.userImage)">
+                        <v-img :src="user.userImage" v-if="user.firstName != 'Lucas'"></v-img>
+                        <v-img src="@/assets/userPP.png" v-else></v-img>
                     </v-avatar>
+         
                     {{ user.firstName }} {{ user.lastName }}
                 </div>
                 <v-rating color="secondary" length="5" :value="4.5" dense half-increments small></v-rating>
