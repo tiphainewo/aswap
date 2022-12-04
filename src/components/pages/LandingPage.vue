@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full flex flex-col bg-[#EDEEB6] items-center pb-15">
+  <div class="h-full w-full flex flex-col bg-[#EDEEB6] items-center pb-12">
     <div class="w-full h-70 bg-[#D94693] text-white text-3xl bigText text-center flex items-center flex-none">
       Bienvenue sur ASWAP !
     </div>
@@ -55,13 +55,18 @@
 
       </v-expansion-panels>
     </div>
+    <FooterComp />
   </div>
 
 </template>
 
 <script>
+import FooterComp from '../FooterComp.vue';
 
 export default ({
+  components: {
+    FooterComp
+  },
   data: () => ({
     questions: [
       { 

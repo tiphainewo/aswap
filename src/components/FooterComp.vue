@@ -34,9 +34,7 @@
                 <img src="@/assets/plus.png" alt="" class="icon" v-else>
             </div>
             <ul class="list" :class="showcol3?'':'hide'">
-                <li class="item"><img src="@/assets/right-arrow.png" alt=""> <a href="">hello@libetlou.com</a></li>
-                <li class="item"><img src="@/assets/right-arrow.png" alt=""> <a href="">11 place vaillant Couturier 18100 Vierzon</a></li>
-                <li class="item"><img src="@/assets/right-arrow.png" alt=""> <a href="">Notre boutique de Vierzon</a></li>
+                <li class="item"><img src="@/assets/right-arrow.png" alt=""> <a href="">contact@aswap.com</a></li>
             </ul>
         </div>
 
@@ -79,6 +77,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper{
     margin-top: 40px;
+    width: 100%;
     .contents{
         width: 100%;
         display: grid;
@@ -87,7 +86,7 @@ export default {
         justify-items: center;
         grid-gap: 20px;
         padding: 30px 20px;
-        background-color: #EB6440;
+        background-color: #D94693;
 
         @media only screen and (max-width:620px){
             grid-template-columns: repeat(1,1fr);
@@ -150,7 +149,7 @@ export default {
         }
     }
     .copyright{
-        background-color: #444;
+        background-color: #50398E;
         display: flex;
         align-items: center;
         justify-content: space-between;
