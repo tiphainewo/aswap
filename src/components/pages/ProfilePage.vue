@@ -15,7 +15,7 @@
         half-increments
         small
       ></v-rating>
-      <v-btn rounded depressed small color="secondary" @click="overlay = true"
+      <v-btn rounded depressed small color="secondary" @click="createGame()"
         >Ajouter un jeu</v-btn
       >
     </div>
@@ -50,7 +50,14 @@
       v-if="overlay"
       class="bg-white rounded-t-3xl h-[80%] text-black w-screen p-5 bottom-0 left-0 z-10 fixed"
     >
-      <GameCreation @select-game="selectGame" />
+      <GameCardExpanded
+        v-if="selectedGame && selectedGame.name"
+        :game="selectedGame"
+        :user="selectedUser"
+        :userGame="!selectedUser.id"
+        @delete-game="deleteGame"
+      />
+      <GameCreation v-else @select-game="selectGame" />
     </div>
   </div>
 </template>
@@ -78,6 +85,16 @@ export default {
     selectGame(game) {
       this.userGames.push(game);
       this.overlay = false;
+    },
+    createGame() {
+      this.overlay = true;
+    },
+    deleteGame(game) {
+      this.closeGame();
+      let index = this.userGames.indexOf(game);
+      if (index !== -1) {
+        this.userGames.splice(index, 1);
+      }
     },
   },
 
