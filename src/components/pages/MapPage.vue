@@ -26,6 +26,7 @@
 
 <script>
 import Mapbox from "mapbox-gl";
+import 'mapbox-gl/dist/mapbox-gl.css'; 
 import { MglMap, MglNavigationControl, MglGeolocateControl, MglMarker } from "vue-mapbox";
 
 export default {

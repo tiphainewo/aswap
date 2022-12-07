@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar color="primary" class="align-start h-2">
-      <div v-on:click="goTo('/')">
+      <div v-on:click="goTo()">
         <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
       </div>
     </v-app-bar>
@@ -56,8 +56,8 @@ export default {
     addUser: function (user) {
       this.users.push(user);
     },
-    goTo(page) {
-      this.$router.push(`/${page}`);
+    goTo() {
+      this.$router.push(`/`);
     },
   },
 };
