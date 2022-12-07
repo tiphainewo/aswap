@@ -6,7 +6,7 @@
 
     <MglMarker :coordinates="user.coordinates" color="blue" v-on:click="openProfile(user.id)" v-for="user of users"
       v-bind:key="user.id">
-      <v-badge slot="marker" bordered overlap :content="user.gamesOwned" color="secondary">
+      <v-badge slot="marker" bordered overlap :content="user.gamesOwned" color="secondary" class="!absolute">
 
         <v-avatar size="50" bordered color="white" class="border-2" v-if="user.userImage">
           <v-img :src="user.userImage"></v-img>
