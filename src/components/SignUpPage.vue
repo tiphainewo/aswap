@@ -1,5 +1,5 @@
 <template>        
-  <v-container >
+  <v-container class="h-full">
 
         <div class="text-center">
           <v-avatar size="100" color="pink accent-1" >
@@ -23,7 +23,7 @@
       </v-stepper-step>
          <v-divider></v-divider>
       <v-stepper-step
-         color="pink lighten-2"
+         color="secondary lighten-2"
         :complete="e1 > 2"
         step="2" >
        
@@ -38,7 +38,8 @@
                     
      <v-form @submit.prevent="submitStep1" ref="form1">
          <v-stepper-content step="1">
-                 <v-text-field
+          <div class="flex flex-col">
+            <v-text-field
                  v-model="name" 
                  :rules ="nameRules"
                   label="Nom"
@@ -49,18 +50,20 @@
                  <v-text-field
                  v-model="lastName" 
                  :rules ="nameRules"
-                  label="Prenom"
-                  placeholder="Prenom"
+                  label="Prénom"
+                  placeholder="Prénom"
                   required
                 ></v-text-field>
                 <v-btn
                   class="white--text"
-                  color="pink accent-2"
+                  color="secondary"
                   type = "submit">
-                  Continue
+                  Continuer
                 </v-btn>
               
-               &nbsp; <router-link to="/" class="pink--text font-weight-black">Je possede un compte</router-link>
+          
+          </div>
+                 
       </v-stepper-content>
      </v-form>
 
@@ -89,11 +92,11 @@
              class="white--text"
               color="pink accent-2"
               type="submit" >
-              Continue
+              Continuer
               </v-btn >
               <v-btn text
               @click="(e1 =1)">
-                Cancel
+                Annuler
               </v-btn>
 
           
@@ -113,7 +116,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-text-field
-          v-model="datte"
+          v-model="date"
           label="Date de Naissance "
           prepend-icon="mdi-calendar"
           readonly
@@ -123,7 +126,7 @@
         ></v-text-field>
       </template>
       <v-date-picker
-        v-model="datte"
+        v-model="date"
         :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
         min="1950-01-01"
         @change="save"
@@ -144,7 +147,7 @@
           class="white--text"
           color="pink accent-2"
           type="submit" >
-          Continue
+            Continuer
         </v-btn>
 
          <v-btn 
@@ -158,7 +161,10 @@
       </v-stepper>
     </v-col>
   </v-row>
-
+  <div class="w-full flex justify-center">
+    <router-link to="/" class="pink--text font-weight-black">Déja un compte? Connectez-vous</router-link>
+  </div>
+  
 </v-container>
 </template>
 
@@ -183,22 +189,21 @@ export default {
           passwordShow: false,
 
     emailRules: [
-      (v) => !!v || "E-mail is required",
-      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      (v) => !!v || "Ce champ est obligatoire",
+      (v) => /.+@.+\..+/.test(v) || "Format d'email non valide!",
     ],
     password: "",
     passwordRules: [
-      (v) => !!v || "Password is required",
-      (v) => (v && v.length >= 6) || "Password must be 6  characters or more!",
+      (v) => !!v || "Ce champ est obligatoire",
+      (v) => (v && v.length >= 6) || "Le mot de passe doit faire plus de 6 caractères!",
 
     ],
     nameRules :[
-      (v) => !!v || "le Nom est Obligatoire",
-      (v) => (v && v.length >= 8) || "Ce champ doit etre composé de 4 caractéres ou plus!",
+      (v) => !!v || "Ce champ est obligatoire",
 
     ],phoneRules :[
-      (v) => !!v || "le Numero de telephone est Obligatoire",
-        (v) => (v.match(/^0[1-9]([-. ]?[0-9]{2}){4}$/)) || 'Numero telephone invalide'
+      (v) => !!v || "Ce champ est obligatoire",
+        (v) => (v.match(/^0[1-9]([-. ]?[0-9]{2}){4}$/)) || 'Numero de téléphone invalide'
 
     
            ]  ,
@@ -226,13 +231,13 @@ export default {
     submitStep3(){
       if (this.$refs.form3.validate()) {
         this.$emit("logIn");
-        this.$router.push('/map')
+        this.$router.push('/home')
       }
     },
       
-     save (datte) {
-      this.$refs.menu.save(datte)
-      this.pickerDate = datte;
+     save (date) {
+      this.$refs.menu.save(date)
+      this.pickerDate = date;
     },
     
   },

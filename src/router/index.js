@@ -23,7 +23,7 @@ const routes = [
     component: GamesList
   },
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: LandingPage
   },
@@ -58,7 +58,7 @@ const routes = [
     component: SignUpPageVue
   },
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: LoginPageVue
   }

@@ -5,7 +5,7 @@
         <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
       </div>
     </v-app-bar>
-    <router-view :users="users" @addUser="addUser" />
+    <router-view :users="users" @addUser="addUser" :loggedIn="loggedIn"/>
     <BottomNav />
 
   </v-app>
@@ -26,7 +26,8 @@ export default {
 
   data: function () {
     return {
-      publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
+      loggedIn: false
     };
   },
 
@@ -55,6 +56,7 @@ export default {
 
     addUser: function (user) {
       this.users.push(user);
+      this.loggedIn=true;
     },
     goTo() {
       this.$router.push(`/`);

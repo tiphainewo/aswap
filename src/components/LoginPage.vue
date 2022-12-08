@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full">
     <v-main class="d-flex justify-center align-center">
       <v-col cols="8" lg="4" class="mx-auto">
         <div class="text-center">
@@ -33,7 +33,7 @@
           </v-card-text>
 
           <v-card-actions class="justify-center">
-            <v-btn  type="submit" color="pink accent-2">
+            <v-btn depressed type="submit" color="secondary">
               <span class="white--text px-8">Connexion
               </span>
             </v-btn>
@@ -57,15 +57,14 @@ export default {
     passwordShow: false,
     email: "",
     emailRules: [
-      (v) => !!v || "un e-mail est Obligatoire",
-      (v) => /.+@.+\..+/.test(v) || " il faut que l'e-mail soit valide",
+      (v) => !!v || "Ce champ est obligatoire",
+      (v) => /.+@.+\..+/.test(v) || " Format d'email non valide",
     ],
     password: "",
     passwordRules: [
-      (v) => !!v || "le Mot de passe est obligatoire",
-      (v) => (v && v.length >= 8) || "Le Mot de passe doit etre composé de 8 caractéres ou plus!",
+      (v) => !!v || "Ce champ est obligatoire",
+      (v) => (v && v.length >= 6) || "Le mot de passe doit faire 6 caractères ou plus!",
     ],
-  
   }),
 
   methods: {
