@@ -21,7 +21,7 @@
             <div class="bg-white p-2 fixed bottom-8 w-[95%]">
                 <v-text-field
                     append-outer-icon="mdi-send"
-                    prepend-icon="mdi-plus-circle"
+                    prepend-icon="mdi-calendar-plus"
                     filled
                     rounded
                     dense

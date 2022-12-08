@@ -15,6 +15,7 @@
 import BottomNav from ".//components/BottomNav";
 import usersJSON from "./data/users.json";
 import User from "./classes/User";
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
   name: "App",

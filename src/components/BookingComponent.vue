@@ -110,7 +110,7 @@
 <script>
 import MapPage from './pages/MapPage.vue'
 import LocationPicker from './LocationPicker.vue'
-
+import axios from 'axios'
 
 
 export default {
@@ -134,7 +134,8 @@ export default {
         time1: null,
         time2: null,
         location: [4.835659, 45.748043],
-        apiKey: "pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg"
+        apiKey: "pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg",
+        address: "",
     }),
 
     computed: {
@@ -174,6 +175,16 @@ export default {
             this.location= [];
             this.location.push(coords.lng);
             this.location.push(coords.lat);
+            console.log(coords)
+
+            axios
+                .get(
+                `https://api.mapbox.com/geocoding/v5/mapbox.places/4.835659%2C20%45.748043.json?access_token=${this.apiKey}`
+                )
+                .then((response) => (this.address = response.data.features[0].place_name))
+                .catch((error) => console.log(error));
+
+            console.log(this.address)
 
         },
         sendMeeting(){

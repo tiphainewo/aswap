@@ -40,14 +40,14 @@ export default {
       {
         id: 2,
         avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-        title: "Léo Dupont",
+        title: "Lucas Corless",
         subtitle: `Bonjour, je serais intéressé par votre Mono...`,
       },
       { divider: true, inset: true },
       {
         id: 3,
-        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        title: 'Jean M.',
+        avatar: "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80",
+        title: 'Reggis Moseley',
         subtitle: `Oui bien sûr! Par contre je ne serai pas e...`,
       },
       { header: "18 novembre" },
