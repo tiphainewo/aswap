@@ -11,6 +11,8 @@ import ProfilePage from '../components/pages/ProfilePage.vue'
 import GamesList from '../components/pages/GamesList.vue'
 import MapPage from '../components/pages/MapPage.vue'
 import UserDetailsPage from '../components/pages/UserDetailsPage.vue'
+import SignUpPageVue from '@/components/SignUpPage.vue'
+import LoginPageVue from '@/components/LoginPage.vue'
 
 Vue.use(VueRouter)
 
@@ -49,6 +51,16 @@ const routes = [
     path: '/user/:id',
     name: 'user',
     component: UserDetailsPage
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignUpPageVue
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginPageVue
   }
 
 ]
