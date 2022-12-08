@@ -60,7 +60,7 @@ export default {
       this.loggedIn=true;
     },
     goTo() {
-      this.$router.push(`/`);
+      this.$router.push(`/home`);
     },
   },
 };

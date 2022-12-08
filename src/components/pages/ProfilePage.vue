@@ -2,6 +2,9 @@
   <div
     class="flex flex-col h-full bg-[#EDEEB6] px-5 pt-5 pb-15 gap-5 items-center justify-start"
   >
+    <div class="absolute right-5 top-15">
+      <v-btn icon color="secondary" @click="$router.push('/')"><v-icon>mdi-logout</v-icon></v-btn>
+    </div>
     <div class="flex flex-col flex-none items-center">
       <v-avatar size="90">
         <v-img src="@/assets/userPP.png"></v-img>
