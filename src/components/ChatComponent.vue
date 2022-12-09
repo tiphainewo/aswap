@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <p class="text-gray-400 text-center">Vous avez fait une demande pour <span class="font-semibold">Monopoly</span></p>
+        <p class="text-gray-400 text-center">Vous avez fait une demande pour <span class="font-semibold">{{game}}</span></p>
         <MessageComponent v-if="!blank" :text="'Bonjour, le Monopoly est disponible ?'" :sentByMe="true"></MessageComponent>
         <MessageComponent v-if="!blank" :text="'Oui pas de soucis !'" :sentByMe="false" :userImage="userImage"></MessageComponent>
 
@@ -24,7 +24,12 @@ import BookingMessageComponent from './BookingMessageComponent.vue'
 
 export default{
     props: ['userMessages', 'userImage', 'meeting', 'accepted', 'userName', 'blank'],
-    components: {MessageComponent, BookingMessageComponent}
+    components: {MessageComponent, BookingMessageComponent},
+    data() {
+        return {
+            game: this.$route.query.game
+        }
+    }
 }
 
 </script>

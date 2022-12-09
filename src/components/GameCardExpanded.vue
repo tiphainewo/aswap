@@ -61,7 +61,8 @@
       class="w-full"
       color="secondary"
       rounded
-      @click="$router.push(`/chat/${user.id}`)"
+
+      @click="$router.push({ path: `/chat/${user.id}`, query: { game: game.name }})"
       >Envoyer une demande</v-btn
     >
     <v-btn
