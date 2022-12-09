@@ -9,7 +9,7 @@
         v-model="searchByGame"
         @input="setSearchKey(searchByGame)"
         rounded
-        depressed
+        flat
       >
       </v-text-field>
       <!-- 
