@@ -6,7 +6,11 @@
 
         <MessageComponent :text="message" :sentByMe="true" v-for="(message, index) of userMessages" :key="index"></MessageComponent>
         
-        <BookingMessageComponent v-if="(meeting && meeting.location)" :meeting="meeting"></BookingMessageComponent>
+        <div v-if="(meeting && meeting.location)">
+            <BookingMessageComponent :meeting="meeting"></BookingMessageComponent>
+            <p class="text-gray-400 text-center">L'autre utilisateur a reçu votre proposition de rendez-vous. Il doit encore l'accepter pour que celui-ci soit confirmé</span></p>
+        </div>
+        
     </div>
   </template>
 

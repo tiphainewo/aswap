@@ -8,6 +8,7 @@
             <p class="font-semibold">Proposition de rendez-vous</p>
             <p>Prêt : le {{ moment(meeting.date1) }} à {{ meeting.time1 }} <br />
                 Retour : le {{ moment(meeting.date2) }} à {{ meeting.time2 }}</p>
+            <p class="!m-0">{{meeting.address}}</p>
             <div class="w-full h-40">
                 <MiniMap :location="meeting.location"></MiniMap>
             </div>

@@ -2,7 +2,7 @@
     <div class="flex flex-col content-between w-full h-full p-2 rounded gap-2">
         <div class="rounded-full h-1.5 bg-light-900 w-[30%] self-center"></div>
 
-        <div class="flex flex-col items-start w-full gap-7">
+        <div class="flex flex-col items-start w-full gap-7 overflow-y-auto">
             <p class="font-semibold text-[#D94693] text-lg !m-0 !p-0">Créer un rendez-vous pour <span
                     class="font-bold">{{ game.name }}</span></p>
 
@@ -92,7 +92,7 @@
                 ></v-text-field> -->
 
                 <div class="w-full h-full">
-
+                    <v-text-field v-model="address" prepend-icon="mdi-map-marker-outline" @input="changeAddress()"></v-text-field>
                     <LocationPicker :location="location" @changeLocation="changeLocation" />
                 </div>
             </div>
@@ -100,7 +100,8 @@
 
 
 
-        <v-btn rounded :disabled="!complete" depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le rendez-vous</v-btn>
+        <v-btn rounded :disabled="!complete" depressed class="w-full" color="secondary" @click="sendMeeting">Envoyer le
+            rendez-vous</v-btn>
     </div>
 
 
@@ -143,7 +144,7 @@ export default {
             return this.formatDate(this.date)
         },
 
-        complete(){
+        complete() {
             return (this.time1 && this.time2 && this.date1 && this.date2 && this.location)
         }
 
@@ -172,14 +173,14 @@ export default {
             return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
         },
         changeLocation(coords) {
-            this.location= [];
+            this.location = [];
             this.location.push(coords.lng);
             this.location.push(coords.lat);
             console.log(coords)
 
             axios
                 .get(
-                `https://api.mapbox.com/geocoding/v5/mapbox.places/4.835659%2C20%45.748043.json?access_token=${this.apiKey}`
+                    `https://api.mapbox.com/geocoding/v5/mapbox.places/${coords.lng},${coords.lat}.json?types=place%2Cpostcode%2Caddress&limit=1&access_token=pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg`
                 )
                 .then((response) => (this.address = response.data.features[0].place_name))
                 .catch((error) => console.log(error));
@@ -187,8 +188,19 @@ export default {
             console.log(this.address)
 
         },
-        sendMeeting(){
-            this.$emit('send-meeting', {time1: this.time1, time2: this.time2, date1: this.date1, date2: this.date2, location: this.location})
+        changeAddress(){
+            // let results;
+            // axios
+            //     .get(
+            //         `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(this.address)}.json?types=place%2Cpostcode%2Caddress&limit=1&access_token=pk.eyJ1IjoicHJvamV0aW50ZWdyZTIwMjEiLCJhIjoiY2t1NWczYmoyMDdnYjJxcGFycnEwYTZpbCJ9.l5DP13cyiFb7yyokZhg1Cg`
+            //     )
+            //     .then((response) => (results = response.data.features[0].coordinates))
+            //     .catch((error) => console.log(error));
+
+            console.log(this.address)
+        },
+        sendMeeting() {
+            this.$emit('send-meeting', { time1: this.time1, time2: this.time2, date1: this.date1, date2: this.date2, location: this.location, address: this.address })
         }
     },
 }

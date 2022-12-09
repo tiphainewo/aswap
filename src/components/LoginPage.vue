@@ -1,50 +1,39 @@
 <template>
-  <div class="h-full">
-    <v-main class="d-flex justify-center align-center">
-      <v-col cols="8" lg="4" class="mx-auto">
-        <div class="text-center">
-          <v-avatar size="100" color="pink accent-1">
-            <v-icon size="40" color="white">mdi-account-key</v-icon>
-          </v-avatar>
-          <h2 class="pink--text font-weight-black">Connexion</h2>
-        </div>
-  
-   
-        <v-form @submit.prevent="submitHandler" ref="form">
+  <div class="h-full bg-[#EDEEB6]">
+    <div class="flex flex-col justify-center items-center m-5 gap-10 mt-20">
+
+      <div class="text-center">
+        <v-avatar size="100" color="accent">
+          <v-icon size="40" color="white">mdi-account-key</v-icon>
+        </v-avatar>
+        <h2 class="text-[#50398E] font-weight-black text-xl">Connexion</h2>
+      </div>
+
+
+      <div class="w-full text-center">
+        <v-form @submit.prevent="submitHandler" ref="form" class="bg-[#D4D64E] p-5 rounded-xl ">
           <v-card-text>
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              type="email"
-              label="Email"
-              placeholder="Email"
-              required
-            />
-            <v-text-field
-              v-model="password"
-              :rules="passwordRules"
-              :type="passwordShow? 'text' : 'password'"
-              label="Mot de passe"
-              placeholder="Mot de passe"
-              :append-icon="passwordShow ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="passwordShow = !passwordShow"
-              required
-            />
+            <v-text-field color="secondary" v-model="email" :rules="emailRules" type="email" label="Email" placeholder="Email" required />
+            <v-text-field color="secondary" v-model="password" :rules="passwordRules" :type="passwordShow ? 'text' : 'password'"
+              label="Mot de passe" placeholder="Mot de passe" :append-icon="passwordShow ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="passwordShow = !passwordShow" required />
           </v-card-text>
 
           <v-card-actions class="justify-center">
-            <v-btn depressed type="submit" color="secondary">
+            <v-btn depressed type="submit" color="secondary" rounded class="w-full">
               <span class="white--text px-8">Connexion
               </span>
             </v-btn>
           </v-card-actions>
 
-          <router-link to="/signup"  class="pink--text font-weight-black">Pas de compte? Inscrivez-vous</router-link>
+
         </v-form>
-          
-   
-      </v-col>
-    </v-main>
+        <router-link to="/signup" class="!text-[#D94693] font-weight-black">Pas de compte? Inscrivez-vous</router-link>
+      </div>
+
+
+
+    </div>
   </div>
 </template>
 
