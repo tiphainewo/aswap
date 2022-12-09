@@ -4,11 +4,8 @@ set -e
 
 npm run build
 
-cd dist
+git add dist && git commit -m 'deploy'
 
-git init
-git add -A
-git commit -m 'New deployment'
-git push -f git@github.com:tiphainewo/projet-jeux.git master:gh-pages
+git subtree push --prefix dist origin gh-pages
 
 cd -
