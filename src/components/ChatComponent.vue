@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <p class="text-gray-400 text-center">Vous avez fait une demande pour <span class="font-semibold">{{game}}</span></p>
+        <p class="text-gray-400 text-center">Vous avez fait une demande pour <span class="font-semibold">{{game || 'Monopoly'}}</span></p>
         <MessageComponent v-if="!blank" :text="'Bonjour, le Monopoly est disponible ?'" :sentByMe="true"></MessageComponent>
         <MessageComponent v-if="!blank" :text="'Oui pas de soucis !'" :sentByMe="false" :userImage="userImage"></MessageComponent>
 
