@@ -8,7 +8,10 @@
         
         <div v-if="(meeting && meeting.location)">
             <BookingMessageComponent :meeting="meeting"></BookingMessageComponent>
-            <p class="text-gray-400 text-center">L'autre utilisateur a reçu votre proposition de rendez-vous. Il doit encore l'accepter pour que celui-ci soit confirmé</span></p>
+            <p class="text-gray-400 text-center">{{userName}} a reçu votre proposition de rendez-vous. Il doit encore l'accepter pour que celui-ci soit confirmé</p>
+            <p v-if="accepted" class="secondary--text text-center">{{userName}} a accepté votre rendez-vous!</p>
+            
+        
         </div>
         
     </div>
@@ -20,7 +23,7 @@ import MessageComponent from './MessageComponent.vue'
 import BookingMessageComponent from './BookingMessageComponent.vue'
 
 export default{
-    props: ['userMessages', 'userImage', 'meeting'],
+    props: ['userMessages', 'userImage', 'meeting', 'accepted', 'userName'],
     components: {MessageComponent, BookingMessageComponent}
 }
 
