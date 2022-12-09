@@ -17,7 +17,7 @@
         </div>
         <div class=" p-3 flex flex-col justify-between h-full w-full">
 
-            <ChatComponent :userName="user.firstName" :userMessages="userMessages" :userImage="user.userImage" :meeting="meeting" :accepted="accepted"></ChatComponent>
+            <ChatComponent :blank="blank" :userName="user.firstName" :userMessages="userMessages" :userImage="user.userImage" :meeting="meeting" :accepted="accepted"></ChatComponent>
             <div class="bg-white p-2 fixed bottom-8 w-[95%]">
                 <v-text-field append-outer-icon="mdi-send" prepend-icon="mdi-calendar-plus" filled rounded dense
                     @click:append-outer="sendMessage" @click:prepend="openBooking" v-model="newMessage"
@@ -82,6 +82,14 @@ export default {
     computed: {
         user() {
             return this.usersArray.find(user => user.id == this.id);
+        },
+        blank(){
+            if (this.id == '1' || this.id == '2' ||this.id == '3' ){
+                return false
+            } 
+         
+                return true;
+          
         }
     },
 }
