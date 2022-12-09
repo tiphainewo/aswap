@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="primary" class="align-start h-2">
+    <v-app-bar color="primary" class="align-start h-2" flat>
       <div v-on:click="goTo()">
         <img :src="`${publicPath}logo_colors.png`" class="object-contain w-1/2" />
       </div>

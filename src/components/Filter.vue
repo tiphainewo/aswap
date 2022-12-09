@@ -8,6 +8,8 @@
         placeholder="Nom du jeu"
         v-model="searchByGame"
         @input="setSearchKey(searchByGame)"
+        rounded
+        depressed
       >
       </v-text-field>
       <!-- 
