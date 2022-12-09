@@ -1,6 +1,6 @@
 <template>
   <div class="h-full bg-[#EDEEB6]">
-    <div class="flex flex-col justify-center items-center m-5 gap-10 mt-20">
+    <div class="flex flex-col justify-center items-center m-5 gap-10">
 
       <div class="text-center">
         <v-avatar size="100" color="accent">
